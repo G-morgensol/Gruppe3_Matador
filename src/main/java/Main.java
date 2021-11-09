@@ -1,5 +1,4 @@
-
-import Model.Player;
+import Model.*;
 import Model.RaffleCup;
 
 public class Main {
@@ -14,6 +13,5 @@ public class Main {
         player.changeBalance(-100);
         System.out.println("Balance of player: " + player.getBalance());
     }
-
 
 }
