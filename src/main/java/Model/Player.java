@@ -3,21 +3,25 @@ package Model;
 public class Player {
     private final int startBalance = 30000;
     private int balance;
-    private Space playerSpace;
+    private Field playerField;
+    String name;
+    int Number;
 
 
-    public Player() {
 
+    public Player(String name,int Number) {
         balance = startBalance;
+        this.name = name;
+        this.Number = Number;
     }
 
 
 
-    public void setPlayerSpace(Space space){
-        this.playerSpace = space;
+    public void setPlayerField(Field field){
+        this.playerField = field;
     }
-    public Space getSpace(){
-        return playerSpace;
+    public Field getPlayerField(){
+        return playerField;
     }
     public void setBalance(int balance){
         this.balance = balance;
@@ -28,4 +32,5 @@ public class Player {
     public int getBalance(){
         return balance;
     }
+    public int getPlayerNumber(){return Number;}
 }
