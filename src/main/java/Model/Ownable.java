@@ -12,9 +12,9 @@ public abstract class Ownable extends Field{
 
     }
 
-    int getRent(int i){return rent[i];}
-    public void setOwner(Player owner){this.owner = owner;
+    protected int getRent(int i){return rent[i];}
+    protected void setOwner(Player owner){this.owner = owner;
     }
-    Player getOwner() {return owner;}
+    protected Player getOwner() {return owner;}
 }
 
