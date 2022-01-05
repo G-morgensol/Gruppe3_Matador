@@ -17,7 +17,9 @@ public class Board {
         fields[i++] = new Start("Start",1);
         fields[i++] = new Street("Rødovrevej",2,1200,new int[]{50,250,750,2250,4000,6000} ,1000,"blue");
         fields[i++] = new Chance("Chance",3);
-        fields[i++] = new Street("Hvidovrevej",4,1200,new int[]{50,250,400,750,2250,6000},1000,"blue");
+        fields[i++] = new Street("Hvidovrevej",4,1200,new int[]{50,250,750,2250,4000,6000},1000,"blue");
+        fields[i++] = new Tax("Tax",5);
+
 
 
 

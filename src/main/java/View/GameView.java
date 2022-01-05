@@ -24,7 +24,9 @@ public class GameView {
         this.gui = gui;
     }
 
-
+    public GUI getGui() {
+        return gui;
+    }
 
     /**
      * This method takes User input for number of players, and their choice of type and color for their vehicle.
