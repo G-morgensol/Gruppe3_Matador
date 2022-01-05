@@ -4,15 +4,14 @@ public class Player {
     private final int startBalance = 30000;
     private int balance;
     private Field playerField;
-    String name;
-    int Number;
+    private int number;
+    private int currentRoll;
+
 
 
 
     public Player(String name,int Number) {
         balance = startBalance;
-        this.name = name;
-        this.Number = Number;
     }
 
 
@@ -32,5 +31,9 @@ public class Player {
     public int getBalance(){
         return balance;
     }
-    public int getPlayerNumber(){return Number;}
+    public int getPlayerNumber(){return number;}
+
+    public void setCurrentRoll(int currentRoll){this.currentRoll = currentRoll;}
+    public int getCurrentRoll(){return currentRoll;}
+
 }

@@ -7,6 +7,10 @@ public class Brewery extends Ownable{
         super(name, position, price, rent);
     }
     public void fieldAction(Player player){
+
         //TODO write method here
+        //In case of 1 brewery owned:
+        player.changeBalance(-player.getCurrentRoll()*100);
+        getOwner().changeBalance(player.getCurrentRoll()*100);
     }
 }
