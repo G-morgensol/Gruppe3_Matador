@@ -27,9 +27,9 @@ public class GameController {
 
     public void playerTurn(){
         for (int i =0;i<board.getTotalPlayers();i++){
+            //TODO add additional steps to playerTurn()
             movePlayer(board.getPlayer(i));
 
-            //Where did the player land?
 
 
         }
@@ -37,7 +37,7 @@ public class GameController {
 
     }
     public void movePlayer(Player player){
-        gameView.showText("Slå med terningen");
+        gameView.showText("Throw dice");
         int playerNumber = player.getPlayerNumber();
         int currentRoll = rafflecup.rollDice();
         gameView.showDice(rafflecup.getDie1Eyes(),rafflecup.getDie2Eyes());
