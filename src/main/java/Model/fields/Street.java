@@ -15,6 +15,7 @@ public class Street extends Ownable {
 
     public void setHouses(int numberOfHouses ){this.numberOfHouses = numberOfHouses;}
     public int getHouses(){return numberOfHouses;}
+    private String getColorGroup(){return colorGroup;}
 
     public int getRent(){
         //TODO write method here

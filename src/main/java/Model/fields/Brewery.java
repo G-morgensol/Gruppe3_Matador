@@ -13,7 +13,7 @@ public class Brewery extends Ownable {
 
         //TODO write method here
         //In case of 1 brewery owned:
-        player.changeBalance(-player.getCurrentRoll()*100);
-        getOwner().changeBalance(player.getCurrentRoll()*100);
+        player.changeBalance(-player.getCurrentRoll()*getRent(0));
+        getOwner().changeBalance(player.getCurrentRoll()*getRent(0));
     }
 }

@@ -21,6 +21,17 @@ public class Board {
         fields[i++] = new Chance("Chance",3);
         fields[i++] = new Street("Hvidovrevej",4,1200,new int[]{50,250,750,2250,4000,6000},1000,"blue");
         fields[i++] = new Tax("Tax",5);
+        fields[i++] = new Shipping("Helsingør-Helsingborg",6,4000,new int[]{500,1000,2000,4000});
+        fields[i++] = new Street("Roskildevej",7,2000,new int[]{100,600,1800,5400,8000,11000},1000,"orange");
+        fields[i++] = new Chance("Chance",8);
+        fields[i++] = new Street("Valby Langgade",9,2000,new int[]{100,600,1800,5400,8000,11000},1000,"orange");
+        fields[i++] = new Street("Allégade",10,2400,new int[]{150,800,2000,6000,9000,12000},1000,"orange");
+        fields[i++] = new Jail("Jail",11);
+        fields[i++] = new Street("Frederiksberg Allé",12,2800,new int[]{200,1000,3000,9000,12500,15000},2000,"yellow");
+        fields[i++] = new Brewery("Tuborg Squash",13,3000,new int[]{100,200});
+        fields[i++] = new Street("Bülowsvej",14,2800,new int[]{200,1000,3000,9000,12500,15000},2000,"yellow");
+        fields[i++] = new Street("Gl. Kongevej",15,3200,new int[]{250,1250,3750,10000,14000,18000},2000,"yellow");
+        fields[i++] = new Shipping("Mols-linjen",16,4000,new int[]{500,1000,2000,4000});
 
 
 
