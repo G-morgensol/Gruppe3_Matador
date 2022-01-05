@@ -9,6 +9,7 @@ public class Board {
     private final List<Player> players= new ArrayList<>();
 
     public Board(){
+        makeFields();
     }
 
     //Field Factory based on GUI implementation. GUI_FieldFactory.java

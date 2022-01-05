@@ -47,7 +47,7 @@ public class GameView {
                     "CAR", "RACECAR", "TRACTOR","UFO");
 
             GUI_Car car = new GUI_Car(Color.red,Color.red, Type.getTypeFromString(carChoice),Pattern.FILL);
-            GUI_Player player = new GUI_Player("Player " +i,30000,car);
+            GUI_Player guiPlayer = new GUI_Player("Player " +i,30000,car);
 
             String colorChoice = gui.getUserSelection(
                     "%s, pick a color for your car!".formatted(playerString),
@@ -69,9 +69,9 @@ public class GameView {
             player.setBalance(10);
             System.out.println(player.setName(playerName));
 */
-            gui.addPlayer(player);
-            guiPlayers.add(player);
-            player.getCar().setPosition(gui.getFields()[0]);
+            gui.addPlayer(guiPlayer);
+            guiPlayers.add(guiPlayer);
+            guiPlayer.getCar().setPosition(gui.getFields()[0]);
             totalPlayers = i;
         }
         return totalPlayers;
@@ -82,14 +82,16 @@ public class GameView {
 
 
 
-    public void setPlayerField(int playerNumber, int fieldNumber){
-        GUI_Player player = guiPlayers.get(playerNumber-1);
-        player.getCar().setPosition(gui.getFields()[fieldNumber]);
+    public void setPlayerField(Player player, int fieldNumber){
+        GUI_Player guiPlayer = guiPlayers.get(player.getPlayerNumber()-1);
+
+        guiPlayer.getCar().setPosition(gui.getFields()[fieldNumber]);
     }
-    public int getPlayerField(int playerNumber){
-        GUI_Player player = guiPlayers.get(playerNumber-1);
+    public int getPlayerField(Player player){
+        System.out.println(player.getPlayerNumber());
+        GUI_Player guiPlayer = guiPlayers.get(player.getPlayerNumber()-1);
         for (int i =0;i<40;i++){
-            if (player.getCar().getPosition()==gui.getFields()[i]) {
+            if (guiPlayer.getCar().getPosition()==gui.getFields()[i]) {
                 return i;
             }
         }

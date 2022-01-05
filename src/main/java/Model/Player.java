@@ -12,7 +12,7 @@ public class Player {
 
 
 
-    public Player(String name,int Number) {
+    public Player(String name,int number) {
         balance = startBalance;
     }
 
