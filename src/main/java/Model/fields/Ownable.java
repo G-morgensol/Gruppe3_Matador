@@ -1,6 +1,9 @@
-package Model;
+package Model.fields;
 
-public abstract class Ownable extends Field{
+import Model.Player;
+import Model.fields.Field;
+
+public abstract class Ownable extends Field {
 
     protected Player owner;
     protected int[] rent;

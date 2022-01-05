@@ -1,6 +1,9 @@
-package Model;
+package Model.fields;
 
-public class Jail extends Field{
+import Model.Player;
+import Model.fields.Field;
+
+public class Jail extends Field {
 
     public Jail(String name, int position) {
         super(name, position);

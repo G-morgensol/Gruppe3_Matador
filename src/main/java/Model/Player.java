@@ -1,5 +1,7 @@
 package Model;
 
+import Model.fields.Field;
+
 public class Player {
     private final int startBalance = 30000;
     private int balance;

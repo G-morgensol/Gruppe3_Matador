@@ -1,6 +1,9 @@
-package Model;
+package Model.fields;
 
-public class Shipping extends Ownable{
+import Model.Player;
+import Model.fields.Ownable;
+
+public class Shipping extends Ownable {
 
 
     public Shipping(String name, int position, int price, int[] rent) {

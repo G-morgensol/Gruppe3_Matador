@@ -1,5 +1,7 @@
 package Model;
 
+import Model.fields.*;
+
 import java.util.ArrayList;
 import java.util.List;
 

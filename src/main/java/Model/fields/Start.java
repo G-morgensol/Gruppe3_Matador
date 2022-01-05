@@ -1,4 +1,6 @@
-package Model;
+package Model.fields;
+
+import Model.fields.Field;
 
 public class Start extends Field {
 

@@ -1,6 +1,9 @@
-package Model;
+package Model.fields;
 
-public class Chance extends Field{
+import Model.Player;
+import Model.fields.Field;
+
+public class Chance extends Field {
     public Chance(String name, int position) {
         super(name, position);
     }

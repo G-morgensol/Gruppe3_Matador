@@ -1,4 +1,7 @@
-package Model;
+package Model.fields;
+
+import Model.Player;
+import Model.fields.Ownable;
 
 public class Street extends Ownable {
     private int housePrice;

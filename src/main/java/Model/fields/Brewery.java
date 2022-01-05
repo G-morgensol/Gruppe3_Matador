@@ -1,6 +1,9 @@
-package Model;
+package Model.fields;
 
-public class Brewery extends Ownable{
+import Model.Player;
+import Model.fields.Ownable;
+
+public class Brewery extends Ownable {
 
 
     public Brewery(String name, int position, int price, int[] rent) {
