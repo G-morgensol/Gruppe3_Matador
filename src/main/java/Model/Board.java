@@ -33,6 +33,8 @@ public class Board {
         fields[i++] = new Street("Bülowsvej",14,2800,new int[]{200,1000,3000,9000,12500,15000},2000,"yellow");
         fields[i++] = new Street("Gl. Kongevej",15,3200,new int[]{250,1250,3750,10000,14000,18000},2000,"yellow");
         fields[i++] = new Shipping("Mols-linjen",16,4000,new int[]{500,1000,2000,4000});
+        fields[i++] = new Street("Bernstorrfsvej",17,3600,new int[]{300,1400,4000,11000,15000,19000},2000,"green");
+
 
 
 
