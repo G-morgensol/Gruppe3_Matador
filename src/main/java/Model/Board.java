@@ -27,7 +27,7 @@ public class Board {
         fields[i++] = new Chance("Chance",8);
         fields[i++] = new Street("Valby Langgade",9,2000,new int[]{100,600,1800,5400,8000,11000},1000,"orange");
         fields[i++] = new Street("Allégade",10,2400,new int[]{150,800,2000,6000,9000,12000},1000,"orange");
-        fields[i++] = new Jail("Jail",11);
+        fields[i++] = new Jail("Visting jail",11);
         fields[i++] = new Street("Frederiksberg Allé",12,2800,new int[]{200,1000,3000,9000,12500,15000},2000,"green");
         fields[i++] = new Brewery("Tuborg Squash",13,3000,new int[]{100,200});
         fields[i++] = new Street("Bülowsvej",14,2800,new int[]{200,1000,3000,9000,12500,15000},2000,"green");
@@ -47,7 +47,7 @@ public class Board {
         fields[i++] = new Street("Kgs´-nytrov",28,5200,new int[]{450,2200,6600,16000,19500,23000},3000,"white");
         fields[i++] = new Brewery("Coca-Cola",29,3000,new int[]{100,200});
         fields[i++] = new Street("Østergade",30,5600,new int[]{500,2400,7200,17000,20500,24000},3000,"white");
-        fields[i++] = new Jail("De fængsles",31);
+        fields[i++] = new Jail("you got arrested",31);
         fields[i++] = new Street("Amagertorv",32,6000,new int[]{550,2600,7800,18000,22000,25000},4000,"yellow");
         fields[i++] = new Street("Vimmelskaftet",33,6000,new int[]{550,2600,7800,18000,22000,25000},4000,"yellow");
         fields[i++] = new Chance("Chance",34);
