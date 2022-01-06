@@ -27,7 +27,7 @@ public class Board {
         fields[i++] = new Chance("Chance",8);
         fields[i++] = new Street("Valby Langgade",9,2000,new int[]{100,600,1800,5400,8000,11000},1000,"orange");
         fields[i++] = new Street("Allégade",10,2400,new int[]{150,800,2000,6000,9000,12000},1000,"orange");
-        fields[i++] = new Jail("Jail",11);
+        fields[i++] = new Jail("Visting jail",11);
         fields[i++] = new Street("Frederiksberg Allé",12,2800,new int[]{200,1000,3000,9000,12500,15000},2000,"green");
         fields[i++] = new Brewery("Tuborg Squash",13,3000,new int[]{100,200});
         fields[i++] = new Street("Bülowsvej",14,2800,new int[]{200,1000,3000,9000,12500,15000},2000,"green");
