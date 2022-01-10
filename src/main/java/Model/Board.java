@@ -74,7 +74,4 @@ public class Board {
     public Player getPlayer(int playerNumber){
         return players.get(playerNumber);
     }
-
-
-
 }

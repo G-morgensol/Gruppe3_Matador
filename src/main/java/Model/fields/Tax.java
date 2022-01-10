@@ -8,7 +8,12 @@ public class Tax extends Field {
         super(name, position);
     }
     public void fieldAction(Player player){
-        //TODO write method here
-
+        if (player.getPlayerField().position==5){
+            //Option 1:
+            player.changeBalance(-4000);
+            //TODO Write option 2: 10% property inside this statement, need GUI handle
+        } else if (player.getPlayerField().position==39){
+            player.changeBalance(-2000);
+        }
     }
 }
