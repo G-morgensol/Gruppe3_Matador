@@ -79,6 +79,7 @@ public class Street extends Ownable {
             //Possibility of buying street
             player.changeBalance(-getPrice());
             player.getProperties().add((Ownable) player.getPlayerField());
+            //TODO add case of not buying, implement GUI prompt here to do so.
         }
     }
 }
