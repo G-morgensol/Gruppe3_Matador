@@ -43,11 +43,27 @@ public class GameControllerTest {
         board.setCurrentPlayer(board.getPlayer(1));
         Player currentPlayer = board.getCurrentPlayer();
         gameController.movePlayer(currentPlayer);
-        int currentRoll = currentPlayer.getRaffleCup().getDiceSum();
+
+        int firstRoll = currentPlayer.getRaffleCup().getDiceSum();
         int playerPosition = currentPlayer.getPlayerField().getPosition();
-        System.out.println("Rolled: "+currentRoll);
+        int tempPlayerPosition =1;
+
+        System.out.println("I rolled: "+firstRoll+" and I am now at position: "+currentPlayer.getPlayerField().getPosition());
         System.out.println("Die1: " + currentPlayer.getRaffleCup().getDie1Eyes());
         System.out.println("Die2: "+ currentPlayer.getRaffleCup().getDie2Eyes());
-        Assertions.assertEquals(currentRoll+1,playerPosition,"Dice roll was: "+ currentRoll+" Player " +currentPlayer.getPlayerNumber()+" landed ended at position: "+playerPosition);
+
+        Assertions.assertEquals(tempPlayerPosition+firstRoll,playerPosition,"Dice roll was: "+ firstRoll+" Player " +currentPlayer.getPlayerNumber()+" landed ended at position: "+playerPosition);
+
+        System.out.println("Moving again");
+        gameController.movePlayer(currentPlayer);
+        int secondRoll = currentPlayer.getRaffleCup().getDiceSum();
+        playerPosition = currentPlayer.getPlayerField().getPosition();
+        tempPlayerPosition = tempPlayerPosition+firstRoll;
+
+        System.out.println("I rolled again: "+secondRoll+ " and I am now at position: "+currentPlayer.getPlayerField().getPosition());
+        System.out.println("Die1: " + currentPlayer.getRaffleCup().getDie1Eyes());
+        System.out.println("Die2: "+ currentPlayer.getRaffleCup().getDie2Eyes());
+
+        Assertions.assertEquals(tempPlayerPosition+secondRoll,playerPosition,"Dice roll was: "+ secondRoll+" Player " +currentPlayer.getPlayerNumber()+" landed ended at position: "+playerPosition);
     }
 }
