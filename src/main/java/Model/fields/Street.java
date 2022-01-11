@@ -58,7 +58,7 @@ public class Street extends Ownable {
             if (numberOfHouses == 0) {
                 for (int i = 0; i < owner.getProperties().size(); i++) {
                     Street ownerStreet = (Street) owner.getProperties().get(i);
-                    if (currentPlayerStreet.colorGroup == ownerStreet.getColorGroup()) {
+                    if (currentPlayerStreet.colorGroup.equals(ownerStreet.getColorGroup())) {
                         currentColorGroupSet = currentColorGroupSet + 1;
                     }
                 }
