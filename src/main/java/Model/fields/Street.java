@@ -31,12 +31,14 @@ public class Street extends Ownable {
         String colorGroup = getColorGroup();
         int colorGroupSetMax;
         int currentColorGroupSet = 0;
+        //There is an owner of this street, and the owner is not the player visiting the field.
         if(owner!=null && player!=owner) {
             //short form if statement https://stackoverflow.com/questions/8898590/short-form-for-java-if-statement
             colorGroupSetMax = colorGroup.equals("purple") || colorGroup.equals("blue") ? 2 : 3;
             if (numberOfHouses == 0) {
                 //Based on: https://stackoverflow.com/questions/4862960/explicit-casting-from-super-class-to-subclass
                 for (Ownable property:owner.getProperties()){
+                    //Checks for every property the player has, if that property is a street, and has the matching colorGroup.
                     if(property instanceof Street streetProperty &&
                             this.colorGroup.equals(streetProperty.getColorGroup()) ) {
                         currentColorGroupSet = currentColorGroupSet + 1;
@@ -61,8 +63,13 @@ public class Street extends Ownable {
             // EVENT
             // WAit for event
             //if true do below else nothing
-            player.changeBalance(-getPrice());
-            player.getProperties().add((Ownable) player.getPlayerField());
+            String userSelect = gameView.gui.getUserSelection("Do you want to buy "+this.name+"?","Yes","No");
+            System.out.println(userSelect);
+            if (userSelect.equals("Yes")){
+
+                player.changeBalance(-getPrice());
+                player.getProperties().add((Ownable) player.getPlayerField());
+            }
             //TODO add case of not buying, implement GUI prompt here to do so.
         }
     }

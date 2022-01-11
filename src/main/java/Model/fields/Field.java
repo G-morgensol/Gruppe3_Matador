@@ -11,7 +11,7 @@ public abstract class Field {
         this.name = name;
         this.position = position;
     }
-    protected void fieldAction(Player player, GameView gameView){
+    public void fieldAction(Player player, GameView gameView){
 
     }
     public int getPosition() {

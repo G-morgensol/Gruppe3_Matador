@@ -25,7 +25,7 @@ public class Shipping extends Ownable {
         } else {
             //Possibility of buying the Shipping
             //In case of buying
-            player.setBalance(-getPrice());
+            player.changeBalance(-getPrice());
             player.addProperty((Ownable) player.getPlayerField());
             //TODO add case of not buying, implement GUI prompt here to do so.
         }
