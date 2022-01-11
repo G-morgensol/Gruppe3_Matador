@@ -58,6 +58,11 @@ public class Street extends Ownable {
             if (numberOfHouses == 0) {
                 for (int i = 0; i < owner.getProperties().size(); i++) {
                     Street ownerStreet = (Street) owner.getProperties().get(i);
+                    //If above doesnt work then try, I.E. ClassCastException:
+                    //Based on: https://stackoverflow.com/questions/4862960/explicit-casting-from-super-class-to-subclass
+                    //Street ownerProperty =owner.getProperties().get(i)
+                    //if(ownerProperty instanceof Street) {
+                    //Street ownerStreet = (Street) ownerProperty
                     if (currentPlayerStreet.colorGroup.equals(ownerStreet.getColorGroup())) {
                         currentColorGroupSet = currentColorGroupSet + 1;
                     }
