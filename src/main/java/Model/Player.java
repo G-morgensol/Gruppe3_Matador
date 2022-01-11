@@ -11,12 +11,19 @@ public class Player {
     private int balance;
     private Field playerField;
     private int number;
-    private int currentRoll;
     private final List<Ownable> properties = new ArrayList<>();
+    private boolean isJailed = false;
+
+    public RaffleCup getRaffleCup() {
+        return rafflecup;
+    }
+
+    private final RaffleCup rafflecup;
 
 
     public Player(String name, int number) {
         balance = startBalance;
+        this.rafflecup = new RaffleCup();
     }
 
 
@@ -45,13 +52,6 @@ public class Player {
         return number;
     }
 
-    public void setCurrentRoll(int currentRoll) {
-        this.currentRoll = currentRoll;
-    }
-
-    public int getCurrentRoll() {
-        return currentRoll;
-    }
 
     public void addProperty(Ownable property) {
         properties.add(property);
@@ -66,4 +66,12 @@ public class Player {
         return false;
     }
     public List<Ownable> getProperties(){return properties;}
+
+    public void setJailed(boolean jailed) {
+        isJailed = jailed;
+    }
+
+    public boolean isJailed() {
+        return isJailed;
+    }
 }

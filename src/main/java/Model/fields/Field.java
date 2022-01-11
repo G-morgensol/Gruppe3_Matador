@@ -11,4 +11,7 @@ public abstract class Field {
     protected void fieldAction(){
 
     }
+    public int getPosition() {
+        return position;
+    }
 }

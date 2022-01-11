@@ -18,6 +18,11 @@ import java.util.List;
 public class GameView {
 
     final public GUI gui;
+
+    public List<GUI_Player> getGuiPlayers() {
+        return guiPlayers;
+    }
+
     private final List<GUI_Player> guiPlayers= new ArrayList<>();
 
     public GameView( GUI gui){
@@ -83,13 +88,13 @@ public class GameView {
 
 
     public void setPlayerField(Player player, int fieldNumber){
-        GUI_Player guiPlayer = guiPlayers.get(player.getPlayerNumber()-1);
+        GUI_Player guiPlayer = guiPlayers.get(player.getPlayerNumber());
 
         guiPlayer.getCar().setPosition(gui.getFields()[fieldNumber]);
     }
     public int getPlayerField(Player player){
         System.out.println(player.getPlayerNumber());
-        GUI_Player guiPlayer = guiPlayers.get(player.getPlayerNumber()-1);
+        GUI_Player guiPlayer = guiPlayers.get(player.getPlayerNumber());
         for (int i =0;i<40;i++){
             if (guiPlayer.getCar().getPosition()==gui.getFields()[i]) {
                 return i;

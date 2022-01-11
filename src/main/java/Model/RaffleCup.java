@@ -14,10 +14,8 @@ public class RaffleCup {
      * @return Sum of rolled dice.
      */
     public int rollDice(){
-    RaffleCup rafflecup = new RaffleCup();
-
-    this.die1Eyes = rafflecup.die1.rollDie();
-    this.die2Eyes = rafflecup.die2.rollDie();
+    this.die1Eyes = die1.rollDie();
+    this.die2Eyes = die2.rollDie();
     this.diceSum = die1Eyes+die2Eyes;
 
     if(die1Eyes==die2Eyes){
@@ -25,11 +23,10 @@ public class RaffleCup {
     } else {
         this.isPair = false;
     }
-
     return diceSum;
     }
 
-
+    public void setDiceSum(int diceSum){this.diceSum = diceSum;}
     public int getDie1Eyes(){
         return die1Eyes;
     }

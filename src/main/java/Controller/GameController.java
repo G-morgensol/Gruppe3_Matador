@@ -7,7 +7,6 @@ import View.GameView;
 public class GameController {
     final public Board board;
     final public GameView gameView;
-    public RaffleCup rafflecup = new RaffleCup();
 
     public GameController(Board board, GameView gameView) {
         this.board = board;
@@ -36,8 +35,13 @@ public class GameController {
     }
     public void movePlayer(Player player){
         gameView.showText("Throw dice");
-        int currentRoll = rafflecup.rollDice();
-        gameView.showDice(rafflecup.getDie1Eyes(),rafflecup.getDie2Eyes());
-        gameView.setPlayerField(player,(gameView.getPlayerField(player)+currentRoll)%40);
+        int currentRoll = player.getRaffleCup().rollDice();
+        System.out.println(currentRoll);
+        int die1 = player.getRaffleCup().getDie1Eyes();
+        int die2 = player.getRaffleCup().getDie2Eyes();
+        int newPosition = (player.getPlayerField().getPosition()+currentRoll)%40;
+        player.setPlayerField(board.getFields()[newPosition]);
+        gameView.showDice(die1,die2);
+        gameView.setPlayerField(player,(newPosition));
     }
 }

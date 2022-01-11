@@ -6,14 +6,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Board {
+
+
     private final List<Player> players= new ArrayList<>();
 
-    public Board(){
-        makeFields();
+
+
+    private Player current;
+
+    public Board(){;
     }
 
     //Field Factory based on GUI implementation. GUI_FieldFactory.java
-    public static Field[] makeFields(){
+    public static Field[] Fields(){
         //TODO finish typing data for fields.
         Field[] fields = new Field[40];
         int i = 0;
@@ -74,4 +79,15 @@ public class Board {
     public Player getPlayer(int playerNumber){
         return players.get(playerNumber);
     }
+
+    public Player getCurrentPlayer() {
+        return current;
+    }
+    public void setCurrentPlayer(Player current) {
+        this.current = current;
+    }
+    public Field[] getFields(){
+        return Fields();
+    }
 }
+
