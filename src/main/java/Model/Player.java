@@ -10,10 +10,10 @@ public class Player {
     private final int startBalance = 30000;
     private int balance;
     private Field playerField;
-    private int number;
     private final List<Ownable> properties = new ArrayList<>();
     private boolean isJailed = false;
-
+    private int number;
+    private String name;
     private final RaffleCup rafflecup;
     public RaffleCup getRaffleCup() {
         return rafflecup;
@@ -25,6 +25,8 @@ public class Player {
     public Player(String name, int number) {
         balance = startBalance;
         this.rafflecup = new RaffleCup();
+        this.number = number;
+        this.name = name;
     }
 
 
@@ -75,4 +77,5 @@ public class Player {
     public boolean isJailed() {
         return isJailed;
     }
+    public String getName(){return name;}
 }

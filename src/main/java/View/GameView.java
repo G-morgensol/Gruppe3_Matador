@@ -87,10 +87,10 @@ public class GameView {
 
 
 
-    public void setPlayerField(Player player, int fieldNumber){
-        GUI_Player guiPlayer = guiPlayers.get(player.getPlayerNumber());
-
-        guiPlayer.getCar().setPosition(gui.getFields()[fieldNumber]);
+    public void setGUIPlayerField(Player player, int fieldPosition){
+        System.out.println("Setting GUIPlayer"+player.getPlayerNumber()+" to position: "+ fieldPosition);
+        GUI_Player guiPlayer = guiPlayers.get(player.getPlayerNumber()-1);
+        guiPlayer.getCar().setPosition(gui.getFields()[fieldPosition]);
     }
     public int getPlayerField(Player player){
         System.out.println(player.getPlayerNumber());

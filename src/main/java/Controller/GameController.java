@@ -16,8 +16,10 @@ public class GameController {
 
     public void startGame(){
     int totalPlayers = gameView.addPlayers();
+        System.out.println("total players from gui:"+ totalPlayers);
     for (int i=1;i<=totalPlayers;i++){
         Player player = new Player("Player "+i,i);
+        player.setPlayerField(board.getFields()[0]);
         board.addPlayer(player);
     }
 
@@ -25,16 +27,16 @@ public class GameController {
     }
 
     public void playerTurn(){
-        for (int i =0;i<=board.getTotalPlayers();i++){
+        System.out.println("total players from backend: "+board.getTotalPlayers());
+        for (int i =1;i<=board.getTotalPlayers();i++){
+            board.setCurrentPlayer(board.getPlayer(i));
+            Player currentPlayer =board.getCurrentPlayer();
             //TODO add additional steps to playerTurn()
-            movePlayer(board.getPlayer(i));
+            movePlayer(currentPlayer);
 
         }
-
-
     }
     public void movePlayer(Player player){
-
         gameView.showText("Throw dice");
         player.getRaffleCup().rollDice();
         int currentRoll = player.getRaffleCup().getDiceSum();
@@ -43,6 +45,6 @@ public class GameController {
         int newPosition = (player.getPlayerField().getPosition()+currentRoll)%40;
         player.setPlayerField(board.getFields()[newPosition-1]);
         gameView.showDice(die1,die2);
-        gameView.setPlayerField(player,(newPosition-1));
+        gameView.setGUIPlayerField(player,(newPosition-1));
     }
 }

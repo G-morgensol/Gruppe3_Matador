@@ -77,7 +77,7 @@ public class Board {
     public int getTotalPlayers(){return players.size();}
 
     public Player getPlayer(int playerNumber){
-        return players.get(playerNumber);
+        return players.get(playerNumber-1);
     }
 
     public Player getCurrentPlayer() {
