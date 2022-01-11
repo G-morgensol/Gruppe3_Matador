@@ -10,7 +10,6 @@ public class Jail extends Field {
     }
 
     public void fieldAction(Player player){
-
         //TODO write method here
     }
 }

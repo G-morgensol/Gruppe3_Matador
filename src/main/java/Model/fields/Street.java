@@ -56,7 +56,8 @@ public class Street extends Ownable {
                 colorGroupSetMax = 3;
             }
             if (numberOfHouses == 0) {
-                for (int i = 0; i < owner.getProperties().size  (); i++) {
+                for (int i = 0; i <= owner.getProperties().size  (); i++) {
+
                     Street ownerStreet = (Street) owner.getProperties().get(i);
                     //If above doesnt work then try, I.E. ClassCastException:
                     //Based on: https://stackoverflow.com/questions/4862960/explicit-casting-from-super-class-to-subclass

@@ -14,11 +14,8 @@ public class Shipping extends Ownable {
         int numberOfShipping = 1;
         Player owner = getOwner();
         if (owner != null) {
-            for (int i = 0; i < owner.getProperties().size(); i++) {
-                if (owner.getProperties().get(i).position == 6 ||
-                        owner.getProperties().get(i).position == 16 ||
-                        owner.getProperties().get(i).position == 26 ||
-                        owner.getProperties().get(i).position == 36) {
+            for (int i = 0; i <= owner.getProperties().size(); i++) {
+                if (owner.getProperties().get(i) instanceof Shipping){
                     numberOfShipping = numberOfShipping+1;
                 }
             }

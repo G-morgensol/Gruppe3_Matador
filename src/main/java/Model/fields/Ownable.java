@@ -12,7 +12,6 @@ public abstract class Ownable extends Field {
         super(name,position);
         this.rent = rent;
         this.price = price;
-
     }
 
     protected int getRent(int i){return rent[i];}

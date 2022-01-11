@@ -11,8 +11,6 @@ public class Main {
         GameController gamecontroller = new GameController(board,gameView);
         gamecontroller.startGame();
         gamecontroller.playerTurn();
-
-
     }
 
 }

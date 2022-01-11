@@ -13,8 +13,8 @@ public class Brewery extends Ownable {
         int numberOfBrewery = 1;
         Player owner = getOwner();
         if (owner != null){
-            for (int i = 0; i < owner.getProperties().size(); i++){
-                if (owner.getProperties().get(i).position == 13 || owner.getProperties().get(i).position == 29){
+            for (int i = 0; i <= owner.getProperties().size(); i++){
+                if (owner.getProperties().get(i) instanceof Brewery){
                     numberOfBrewery = numberOfBrewery+1;
                 }
             }

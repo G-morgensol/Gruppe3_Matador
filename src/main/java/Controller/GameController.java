@@ -15,17 +15,14 @@ public class GameController {
 
 
     public void startGame(){
-    int totalPlayers = gameView.addPlayers();
+        int totalPlayers = gameView.addPlayers();
         System.out.println("total players from gui:"+ totalPlayers);
-    for (int i=1;i<=totalPlayers;i++){
-        Player player = new Player("Player "+i,i);
-        player.setPlayerField(board.getFields()[0]);
-        board.addPlayer(player);
+        for (int i=1;i<=totalPlayers;i++){
+            Player player = new Player("Player "+i,i);
+            player.setPlayerField(board.getFields()[0]);
+            board.addPlayer(player);
+        }
     }
-
-
-    }
-
     public void playerTurn(){
         System.out.println("total players from backend: "+board.getTotalPlayers());
         for (int i =1;i<=board.getTotalPlayers();i++){
@@ -33,7 +30,6 @@ public class GameController {
             Player currentPlayer =board.getCurrentPlayer();
             //TODO add additional steps to playerTurn()
             movePlayer(currentPlayer);
-
         }
     }
     public void movePlayer(Player player){
