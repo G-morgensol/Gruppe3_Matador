@@ -42,10 +42,12 @@ public class GameControllerTest {
         Board board = gameController.board;
         board.setCurrentPlayer(board.getPlayer(1));
         Player currentPlayer = board.getCurrentPlayer();
-
         gameController.movePlayer(currentPlayer);
         int currentRoll = currentPlayer.getRaffleCup().getDiceSum();
         int playerPosition = currentPlayer.getPlayerField().getPosition();
-        Assertions.assertEquals(currentRoll,playerPosition,"Dice roll was: "+ currentRoll+" Player " +currentPlayer.getPlayerNumber()+" landed ended at position: "+playerPosition);
+        System.out.println("Rolled: "+currentRoll);
+        System.out.println("Die1: " + currentPlayer.getRaffleCup().getDie1Eyes());
+        System.out.println("Die2: "+ currentPlayer.getRaffleCup().getDie2Eyes());
+        Assertions.assertEquals(currentRoll+1,playerPosition,"Dice roll was: "+ currentRoll+" Player " +currentPlayer.getPlayerNumber()+" landed ended at position: "+playerPosition);
     }
 }

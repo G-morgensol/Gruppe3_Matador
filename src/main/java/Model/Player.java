@@ -14,11 +14,12 @@ public class Player {
     private final List<Ownable> properties = new ArrayList<>();
     private boolean isJailed = false;
 
+    private final RaffleCup rafflecup;
     public RaffleCup getRaffleCup() {
         return rafflecup;
     }
 
-    private final RaffleCup rafflecup;
+
 
 
     public Player(String name, int number) {

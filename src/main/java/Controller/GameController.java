@@ -35,11 +35,11 @@ public class GameController {
     }
     public void movePlayer(Player player){
         gameView.showText("Throw dice");
-        int currentRoll = player.getRaffleCup().rollDice();
-        System.out.println(currentRoll);
+        player.getRaffleCup().rollDice();
+        int currentRoll = player.getRaffleCup().getDiceSum();
         int die1 = player.getRaffleCup().getDie1Eyes();
         int die2 = player.getRaffleCup().getDie2Eyes();
-        int newPosition = (player.getPlayerField().getPosition()+currentRoll)%40;
+        int newPosition = (player.getPlayerField().getPosition()-1+currentRoll)%40;
         player.setPlayerField(board.getFields()[newPosition]);
         gameView.showDice(die1,die2);
         gameView.setPlayerField(player,(newPosition));
