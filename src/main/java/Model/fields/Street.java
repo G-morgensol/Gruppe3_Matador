@@ -59,18 +59,7 @@ public class Street extends Ownable {
             }
         }
         else {
-            //Possibility of buying street
-            // EVENT
-            // WAit for event
-            //if true do below else nothing
-            String userSelect = gameView.gui.getUserSelection("Do you want to buy "+this.name+"?","Yes","No");
-            System.out.println(userSelect);
-            if (userSelect.equals("Yes")){
-
-                player.changeBalance(-getPrice());
-                player.getProperties().add((Ownable) player.getPlayerField());
-            }
-            //TODO add case of not buying, implement GUI prompt here to do so.
+            buyProperty(player,gameView);
         }
     }
 }

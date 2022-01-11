@@ -23,11 +23,7 @@ public class Shipping extends Ownable {
             player.changeBalance(-getRent(numberOfShipping));
             owner.changeBalance(getRent(numberOfShipping));
         } else {
-            //Possibility of buying the Shipping
-            //In case of buying
-            player.changeBalance(-getPrice());
-            player.addProperty((Ownable) player.getPlayerField());
-            //TODO add case of not buying, implement GUI prompt here to do so.
+            buyProperty(player,gameView);
         }
     }
 }
