@@ -43,6 +43,6 @@ public class GameController {
         int newPosition = (player.getPlayerField().getPosition()+currentRoll)%40;
         player.setPlayerField(board.getFields()[newPosition-1]);
         gameView.showDice(die1,die2);
-        gameView.setPlayerField(player,(newPosition));
+        gameView.setPlayerField(player,(newPosition-1));
     }
 }
