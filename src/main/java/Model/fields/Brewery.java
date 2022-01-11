@@ -10,11 +10,16 @@ public class Brewery extends Ownable {
         super(name, position, price, rent);
     }
     public void fieldAction(Player player){
-
-        //TODO write method here
-        //In case of 1 brewery owned:
-        int currentRoll = player.getRaffleCup().getDiceSum();
-        player.changeBalance(-currentRoll*getRent(0));
-        getOwner().changeBalance(currentRoll*getRent(0));
+        int numberOfBrewery = 1;
+        Player owner = getOwner();
+        if (owner != null){
+            for (int i = 0; i < owner.getProperties().size(); i++){
+                if (owner.getProperties().get(i).position == 13 || owner.getProperties().get(i).position == 29){
+                    numberOfBrewery = numberOfBrewery+1;
+                }
+            }
+            player.changeBalance(-player.getRaffleCup().getDiceSum()*100*numberOfBrewery);
+            owner.changeBalance(player.getRaffleCup().getDiceSum()*100*numberOfBrewery);
+        }
     }
 }

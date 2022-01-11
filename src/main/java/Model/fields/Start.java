@@ -9,6 +9,7 @@ public class Start extends Field {
         super(name, position);
     }
     public void fieldAction(Player player){
-        //TODO write method here
+            player.changeBalance(4000); //when you pass start get 4000 kr
+        }
     }
-}
+
