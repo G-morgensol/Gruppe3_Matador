@@ -1,5 +1,8 @@
 package Model.fields;
 
+import Model.Player;
+import View.GameView;
+
 public abstract class Field {
     protected String name;
     protected int position;
@@ -8,7 +11,7 @@ public abstract class Field {
         this.name = name;
         this.position = position;
     }
-    protected void fieldAction(){
+    protected void fieldAction(Player player, GameView gameView){
 
     }
     public int getPosition() {

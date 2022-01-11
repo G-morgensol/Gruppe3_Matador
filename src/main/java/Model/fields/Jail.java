@@ -2,6 +2,7 @@ package Model.fields;
 
 import Model.Player;
 import Model.fields.Field;
+import View.GameView;
 
 public class Jail extends Field {
 
@@ -9,7 +10,7 @@ public class Jail extends Field {
         super(name, position);
     }
 
-    public void fieldAction(Player player){
+    public void fieldAction(Player player, GameView gameView){
         //TODO write method here
     }
 }

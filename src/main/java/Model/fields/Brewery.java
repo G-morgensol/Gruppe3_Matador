@@ -2,6 +2,7 @@ package Model.fields;
 
 import Model.Player;
 import Model.fields.Ownable;
+import View.GameView;
 
 public class Brewery extends Ownable {
 
@@ -9,7 +10,7 @@ public class Brewery extends Ownable {
     public Brewery(String name, int position, int price, int[] rent) {
         super(name, position, price, rent);
     }
-    public void fieldAction(Player player){
+    public void fieldAction(Player player,GameView gameView){
         int numberOfBrewery = 1;
         Player owner = getOwner();
         if (owner != null){
