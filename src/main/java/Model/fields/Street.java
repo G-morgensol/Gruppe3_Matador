@@ -43,7 +43,6 @@ public class Street extends Ownable {
             }
         return 0;
     }
-
     public void fieldAction(Player player) {
         Player owner = getOwner();
         String colorGroup = getColorGroup();
@@ -78,7 +77,7 @@ public class Street extends Ownable {
         }
             else {
             //Possibility of buying street
-            player.setBalance(-getPrice());
+            player.changeBalance(-getPrice());
             player.getProperties().add((Ownable) player.getPlayerField());
         }
     }
