@@ -25,7 +25,7 @@ public class Street extends Ownable {
     private String getColorGroup() {
         return colorGroup;
     }
-
+    //Could use @Overide tag here, if we change getRent() to getRent(int numberOfHouses), then implement it inside fieldAction for prettier code.
     public int getRent() {
             switch (numberOfHouses) {
                 case 0:
