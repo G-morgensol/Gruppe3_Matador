@@ -9,5 +9,7 @@ public class Parking extends Field {
     }
     public void fieldAction(Player player){
         //TODO write method here
+
+        //Some GUI message like: "You are taking a break at the free parking spot!"
     }
 }

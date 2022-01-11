@@ -45,7 +45,42 @@ public class Street extends Ownable {
     }
 
     public void fieldAction(Player player) {
-        //TODO write method here
+        Player owner = getOwner();
+        String colorGroup = getColorGroup();
+        int colorGroupSetMax;
+        int currentColorGroupSet = 1;
+        Street currentPlayerStreet = (Street) player.getPlayerField();
+        if(owner!=null) {
+            if (colorGroup.equals("purple") || colorGroup.equals("blue")) {
+                colorGroupSetMax = 2;
+            } else {
+                colorGroupSetMax = 3;
+            }
+            if (numberOfHouses == 0) {
+                for (int i = 0; i < owner.getProperties().size(); i++) {
+                    Street ownerStreet = (Street) owner.getProperties().get(i);
+                    if (currentPlayerStreet.colorGroup == ownerStreet.getColorGroup()) {
+                        currentColorGroupSet = currentColorGroupSet + 1;
+                    }
+                }
+                if (currentColorGroupSet == colorGroupSetMax) {
+                    //Rent is doubled if full colorSet is owned.
+                    player.changeBalance(-(getRent(0) * 2));
+                    owner.changeBalance(getRent(0) * 2);
+                } else {
+                    player.changeBalance(-getRent(0));
+                    owner.changeBalance(getRent(0));
+                }
+            } else {
+                player.changeBalance(-getRent(numberOfHouses));
+                owner.changeBalance(getRent(numberOfHouses));
+            }
+        }
+            else {
+            //Possibility of buying street
+            player.setBalance(-getPrice());
+            player.getProperties().add((Ownable) player.getPlayerField());
+        }
     }
 }
 

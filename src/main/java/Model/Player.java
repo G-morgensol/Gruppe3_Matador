@@ -28,6 +28,7 @@ public class Player {
         return playerField;
     }
 
+
     public void setBalance(int balance) {
         this.balance = balance;
     }
