@@ -1,7 +1,6 @@
 package Model.fields;
 
 import Model.Player;
-import Model.fields.Field;
 import View.GameView;
 
 public class Jail extends Field {

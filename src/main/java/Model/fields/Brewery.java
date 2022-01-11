@@ -1,7 +1,6 @@
 package Model.fields;
 
 import Model.Player;
-import Model.fields.Ownable;
 import View.GameView;
 
 public class Brewery extends Ownable {

@@ -1,7 +1,6 @@
 package Model.fields;
 
 import Model.Player;
-import Model.fields.Field;
 
 public class Start extends Field {
 

@@ -1,7 +1,6 @@
 package Model.fields;
 
 import Model.Player;
-import Model.fields.Field;
 import View.GameView;
 
 public abstract class Ownable extends Field {
@@ -27,6 +26,7 @@ public abstract class Ownable extends Field {
         if (userSelect.equals("Yes")){
             player.changeBalance(-getPrice());
             player.getProperties().add((Ownable) player.getPlayerField());
+            owner = player;
         }
     }
 }
