@@ -30,6 +30,7 @@ public class GameController {
             Player currentPlayer =board.getCurrentPlayer();
             //TODO add additional steps to playerTurn()
             movePlayer(currentPlayer);
+            currentPlayer.getPlayerField().fieldAction(currentPlayer,gameView);
         }
     }
     public void movePlayer(Player player){
@@ -42,8 +43,5 @@ public class GameController {
         player.setPlayerField(board.getFields()[newPosition-1]);
         gameView.showDice(die1,die2);
         gameView.setGUIPlayerField(player,(newPosition-1));
-        player.getPlayerField().fieldAction(player,gameView);
-        System.out.println("Player balance:"+player.getBalance());
-        System.out.println("Properties: "+player.getProperties().get(0));
     }
 }
