@@ -52,7 +52,7 @@ public class Board {
         fields[i++] = new Street("Kgs. Nytorv",28,5200,new int[]{450,2200,6600,16000,19500,23000},3000,"white");
         fields[i++] = new Brewery("Coca-Cola",29,3000,new int[]{100,200});
         fields[i++] = new Street("Østergade",30,5600,new int[]{500,2400,7200,17000,20500,24000},3000,"white");
-        fields[i++] = new Jail("Go to Jail",31);
+        fields[i++] = new ToJail("Go to Jail",31,fields[10]);
         fields[i++] = new Street("Amagertorv",32,6000,new int[]{550,2600,7800,18000,22000,25000},4000,"yellow");
         fields[i++] = new Street("Vimmelskaftet",33,6000,new int[]{550,2600,7800,18000,22000,25000},4000,"yellow");
         fields[i++] = new Chance("Chance",34);
