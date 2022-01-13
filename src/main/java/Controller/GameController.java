@@ -30,6 +30,7 @@ public class GameController {
             board.setCurrentPlayer(board.getPlayer(i));
             Player currentPlayer =board.getCurrentPlayer();
             //TODO add additional steps to playerTurn()
+            gameView.updateCenterFieldListOfProperties(currentPlayer);
             movePlayer(currentPlayer);
             currentPlayer.getPlayerField().fieldAction(currentPlayer,gameView);
         }
@@ -46,6 +47,9 @@ public class GameController {
         int die1 = player.getRaffleCup().getDie1Eyes();
         int die2 = player.getRaffleCup().getDie2Eyes();
         int newPosition = (player.getPlayerField().getPosition()+currentRoll)%40;
+        if(newPosition==0){
+            newPosition=40;
+        }
         player.setPlayerField(board.getFields()[newPosition-1]);
         gameView.showDice(die1,die2);
         gameView.setGUIPlayerField(player,(newPosition-1));
