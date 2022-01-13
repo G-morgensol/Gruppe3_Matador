@@ -21,7 +21,7 @@ public abstract class Ownable extends Field {
     protected int getPrice(){return price;}
 
     protected void buyProperty(Player player, GameView gameView){
-        String userSelect = gameView.gui.getUserSelection("Do you want to buy "+this.name+"?","Yes","No");
+        String userSelect = gameView.getGui().getUserSelection("Do you want to buy "+this.name+"?","Yes","No");
         System.out.println(userSelect);
         if (userSelect.equals("Yes")){
             player.changeBalance(-getPrice());

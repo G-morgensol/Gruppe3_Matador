@@ -9,7 +9,7 @@ public class Tax extends Field {
     }
     public void fieldAction(Player player, GameView gameView){
         if (player.getPlayerField().position==5){
-            String userSelection = gameView.gui.getUserSelection("You got extra taxes! Pay 4000, or 10% of your property value","4000","10%");
+            String userSelection = gameView.getGui().getUserSelection("You got extra taxes! Pay 4000, or 10% of your property value","4000","10%");
             if (userSelection.equals("4000")) {
                 player.changeBalance(-4000);
             } else {
