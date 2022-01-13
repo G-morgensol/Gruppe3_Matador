@@ -8,8 +8,6 @@ public class Parking extends Field {
         super(name, position);
     }
     public void fieldAction(Player player, GameView gameView){
-        //TODO write method here
-
-        //Some GUI message like: "You are taking a break at the free parking spot!"
+        gameView.showText("You are taking a break at a free parking spot!");
     }
 }

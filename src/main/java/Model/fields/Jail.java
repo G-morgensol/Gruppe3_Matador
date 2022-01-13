@@ -10,6 +10,6 @@ public class Jail extends Field {
     }
 
     public void fieldAction(Player player, GameView gameView){
-        //TODO write method here
+        gameView.showText("You are visiting the local jail");
     }
 }

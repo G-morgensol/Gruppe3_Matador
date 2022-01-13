@@ -5,8 +5,6 @@ import Model.fields.Ownable;
 import View.GameView;
 
 public class Shipping extends Ownable {
-    private int numberOfShippingCompanies;
-
 
     public Shipping(String name, int position, int price, int[] rent) {super(name, position, price, rent);}
 

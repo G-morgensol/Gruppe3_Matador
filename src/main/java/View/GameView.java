@@ -80,22 +80,10 @@ public class GameView {
         gui.setDice(die1,die2);
     }
 
-
-
     public void setGUIPlayerField(Player player, int fieldPosition){
         System.out.println("Setting GUIPlayer"+player.getPlayerNumber()+" to position: "+ fieldPosition);
         GUI_Player guiPlayer = guiPlayers.get(player.getPlayerNumber()-1);
         guiPlayer.getCar().setPosition(gui.getFields()[fieldPosition]);
-    }
-    public int getPlayerField(Player player){
-        System.out.println(player.getPlayerNumber());
-        GUI_Player guiPlayer = guiPlayers.get(player.getPlayerNumber());
-        for (int i =0;i<40;i++){
-            if (guiPlayer.getCar().getPosition()==gui.getFields()[i]) {
-                return i;
-            }
-        }
-        return 0;
     }
     public void showText(String text){
         gui.showMessage(text);
