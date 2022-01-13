@@ -11,10 +11,10 @@ public class Main {
         GUI_Field[] guifields = {
                 new GUI_Start("Start", "Receive 4000", "Receive kr. 4000,-\nwhen you pass start", Color.RED, Color.BLACK),
                 new GUI_Street("Rødovrevej", "Price:  1200", "Rødovrevej", "Rent:  50", new Color(75, 155, 225), Color.BLACK),
-                new GUI_Chance("?", "Prøv lykken", "Ta' et chancekort.", new Color(204, 204, 204), Color.BLACK),
+                new GUI_Chance("?", "Try your luck!", "Take a chance card.", new Color(204, 204, 204), Color.BLACK),
                 new GUI_Street("Hvidovrevej", "Price:  1200", "Hvidovrevej", "Rent:  50", new Color(75, 155, 225), Color.BLACK),
-                new GUI_Tax("Betal\nindkomst-\nskat", "10% el. 200", "Betal indkomstskat\n10% eller kr. 200,-", Color.GRAY, Color.BLACK),
-                new GUI_Shipping("default", "Øresund", "Pris:  200", "Øresundsredderiet", "Leje:  75", Color.WHITE, Color.BLACK),
+                new GUI_Tax("Pay\nincome-\ntax", "10% or 4000", "Pay incometax\n10% or kr. 4000,-", Color.GRAY, Color.BLACK),
+                new GUI_Shipping("default", "Øresund", "Pris:  4000", "Øresundsredderiet", "Rent:  500", Color.WHITE, Color.BLACK),
                 new GUI_Street("Roskildevej", "Pris:  100", "Roskildevej", "Leje:  40", new Color(255, 135, 120), Color.BLACK),
                 new GUI_Chance("?", "Prøv lykken", "Ta' et chancekort.", new Color(204, 204, 204), Color.BLACK),
                 new GUI_Street("Valby\nLanggade", "Pris:  100", "Valby Langgade", "Leje:  40", new Color(255, 135, 120), Color.BLACK),
