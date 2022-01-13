@@ -1,5 +1,5 @@
 package Controller;
-
+/*
 import Model.Board;
 import Model.Player;
 import View.GameView;
@@ -68,3 +68,5 @@ public class GameControllerTest {
         Assertions.assertEquals(tempPlayerPosition+secondRoll,playerPosition,"Dice roll was: "+ secondRoll+" Player " +currentPlayer.getPlayerNumber()+" landed ended at position: "+playerPosition);
     }
 }
+
+ */
