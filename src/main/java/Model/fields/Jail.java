@@ -9,7 +9,7 @@ public class Jail extends Field {
         super(name, position);
     }
 
-    public void fieldAction(Player player, GameView gameView){
-        gameView.showText("You are visiting the local jail");
+    public void fieldAction(Player player, GameView gameView){gameView.showText("You are visiting the local jail");
+        player.setJailCard(true);
     }
 }

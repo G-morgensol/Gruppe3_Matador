@@ -86,7 +86,7 @@ public class Board {
     public void setCurrentPlayer(Player current) {
         this.current = current;
     }
-    public Field[] getFields(){
+    public static Field[] getFields(){
         return Fields();
     }
 }
