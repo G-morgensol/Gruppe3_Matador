@@ -24,5 +24,6 @@ public class Tax extends Field {
             gameView.showText("Pay 2000 in taxes!");
             player.changeBalance(-2000);
         }
+        gameView.updatePlayerBalance(player,player.getBalance());
     }
 }

@@ -25,20 +25,23 @@ public class GameController {
         turnLoop();
     }
     public void playerTurn(){
-        System.out.println("total players from backend: "+board.getTotalPlayers());
-        for (int i =1;i<=board.getTotalPlayers();i++){
+        System.out.println("total players from backend: "+board.getPlayers().size());
+        for (int i =1;i<=board.getPlayers().size();i++){
             board.setCurrentPlayer(board.getPlayer(i));
             Player currentPlayer =board.getCurrentPlayer();
             //TODO add additional steps to playerTurn()
             gameView.updateCenterFieldListOfProperties(currentPlayer);
             movePlayer(currentPlayer);
             currentPlayer.getPlayerField().fieldAction(currentPlayer,gameView);
+            isPlayerBankrupt(currentPlayer);
         }
     }
     public void turnLoop(){
-        while(board.getTotalPlayers() != 1){
+        while(board.getPlayers().size() != 1){
             playerTurn();
         }
+        gameView.gui.showMessage("Game is over! "+board.getPlayer(1).getName()+" won the game");
+        gameView.gui.close();
     }
     public void movePlayer(Player player){
         gameView.showText("Throw dice");
@@ -53,5 +56,13 @@ public class GameController {
         player.setPlayerField(board.getFields()[newPosition-1]);
         gameView.showDice(die1,die2);
         gameView.setGUIPlayerField(player,(newPosition-1));
+    }
+    public void isPlayerBankrupt(Player player){
+        if(player.getBalance()<0){
+            board.removePlayer(player);
+            gameView.getGuiPlayers().get(player.getPlayerNumber()-1).getCar().setPosition(null);
+            gameView.getGuiPlayers().get(player.getPlayerNumber()-1).setName("Out of game");
+            gameView.getGuiPlayers().get(player.getPlayerNumber()-1).setBalance(0);
+        }
     }
 }

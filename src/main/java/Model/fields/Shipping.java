@@ -20,8 +20,10 @@ public class Shipping extends Ownable {
             }
             player.changeBalance(-getRent(numberOfShipping));
             owner.changeBalance(getRent(numberOfShipping));
+            gameView.updatePlayerBalance(owner,owner.getBalance());
         } else {
             buyProperty(player,gameView);
         }
+        gameView.updatePlayerBalance(player,player.getBalance());
     }
 }
