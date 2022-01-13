@@ -9,6 +9,7 @@ import java.awt.*;
 public class Main {
     public static void main(String[] args) {
         GUI_Field[] guifields = {
+                //TODO Fix fields so they have the correct values! Consider moving declaration out of main
                 new GUI_Start("Start", "Receive 4000", "Receive kr. 4000,-\nwhen you pass start", Color.RED, Color.BLACK),
                 new GUI_Street("Rødovrevej", "Price:  1200", "Rødovrevej", "Rent:  50", new Color(75, 155, 225), Color.BLACK),
                 new GUI_Chance("?", "Try your luck!", "Take a chance card.", new Color(204, 204, 204), Color.BLACK),
