@@ -15,6 +15,6 @@ public class ToJail extends Field {
     public void fieldAction(Player player, GameView gameView){
         player.setPlayerField(jail);
         player.setJailed(true);
-        gameView.getGui().showMessage("You got jailed, sucks to be you");
+        gameView.gui.showMessage("You got jailed, sucks to be you");
     }
 }

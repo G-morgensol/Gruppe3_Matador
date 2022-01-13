@@ -22,6 +22,7 @@ public class GameController {
             player.setPlayerField(board.getFields()[0]);
             board.addPlayer(player);
         }
+        turnLoop();
     }
     public void playerTurn(){
         System.out.println("total players from backend: "+board.getTotalPlayers());
@@ -31,6 +32,11 @@ public class GameController {
             //TODO add additional steps to playerTurn()
             movePlayer(currentPlayer);
             currentPlayer.getPlayerField().fieldAction(currentPlayer,gameView);
+        }
+    }
+    public void turnLoop(){
+        while(board.getTotalPlayers() != 1){
+            playerTurn();
         }
     }
     public void movePlayer(Player player){
