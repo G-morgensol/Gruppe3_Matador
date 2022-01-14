@@ -15,7 +15,7 @@ public abstract class Ownable extends Field {
     }
 
     protected int getRent(int i){return rent[i];}
-    protected void setOwner(Player owner){this.owner = owner;
+    public void setOwner(Player owner){this.owner = owner;
     }
     protected Player getOwner() {return owner;}
     protected int getPrice(){return price;}
@@ -27,6 +27,8 @@ public abstract class Ownable extends Field {
             player.changeBalance(-getPrice());
             player.getProperties().add((Ownable) player.getPlayerField());
             owner = player;
+            gameView.updateFieldOwner(player,player.getPlayerField().position);
+            gameView.updatePlayerBalance(player,player.getBalance());
         }
     }
 }

@@ -61,14 +61,6 @@ public class Player {
         properties.add(property);
     }
 
-    public boolean checkOwnership(Ownable property) {
-        for (int i = 0; i < properties.size(); i++) {
-            if(property==properties.get(i)){
-                return true;
-            }
-        }
-        return false;
-    }
     public List<Ownable> getProperties(){return properties;}
 
     public void setJailed(boolean jailed) {
@@ -77,6 +69,7 @@ public class Player {
 
     public boolean isJailed() {
         return isJailed;
+
     }
     public String getName(){return name;}
     public boolean getJailCard() {

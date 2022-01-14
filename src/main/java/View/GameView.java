@@ -1,6 +1,7 @@
 package View;
 
 import Model.Player;
+import Model.fields.Ownable;
 import gui_fields.*;
 import gui_fields.GUI_Car.Pattern;
 import gui_fields.GUI_Car.Type;
@@ -14,10 +15,6 @@ import java.util.List;
 public class GameView {
     public final GUI gui;
 
-    public List<GUI_Player> getGuiPlayers() {
-        return guiPlayers;
-    }
-
     private final List<GUI_Player> guiPlayers= new ArrayList<>();
 
     public GameView(GUI gui) {
@@ -28,6 +25,9 @@ public class GameView {
         return gui;
     }
 
+    public List<GUI_Player> getGuiPlayers() {
+        return guiPlayers;
+    }
     /**
      * This method takes User input for number of players, and their choice of type and color for their vehicle.
      * @return total players added are returned.
@@ -88,4 +88,31 @@ public class GameView {
     public void showText(String text){
         gui.showMessage(text);
     }
+
+
+
+    public void updateCenterFieldListOfProperties(Player player){
+        StringBuilder centerFieldMsg = new StringBuilder(player.getName() + "'s list of properties:");
+        for (Ownable property:player.getProperties()){
+            centerFieldMsg.append("\n").append(property.getName());
+        }
+        gui.setChanceCard(centerFieldMsg.toString());
+        gui.displayChanceCard();
+    }
+
+    public void updateFieldOwner(Player player,int fieldPosition){
+        GUI_Field field = gui.getFields()[fieldPosition-1];
+        GUI_Ownable ownable = (GUI_Ownable) field;
+        if(player!=null){
+            ownable.setOwnerName(player.getName());
+        } else{
+            ownable.setOwnerName(null);
+        }
+
+    }
+    public void updatePlayerBalance(Player player, int newBalance){
+        GUI_Player guiPlayer = getGuiPlayers().get(player.getPlayerNumber()-1);
+        guiPlayer.setBalance(newBalance);
+    }
 }
+

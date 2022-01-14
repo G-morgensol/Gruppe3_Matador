@@ -2,6 +2,8 @@ package Controller;
 
 
 import Model.*;
+import Model.fields.Ownable;
+import Model.fields.Street;
 import View.GameView;
 
 public class GameController {
@@ -25,29 +27,52 @@ public class GameController {
         turnLoop();
     }
     public void playerTurn(){
-        System.out.println("total players from backend: "+board.getTotalPlayers());
-        for (int i =1;i<=board.getTotalPlayers();i++){
+        System.out.println("total players from backend: "+board.getPlayers().size());
+        for (int i =1;i<=board.getPlayers().size();i++){
             board.setCurrentPlayer(board.getPlayer(i));
             Player currentPlayer =board.getCurrentPlayer();
             //TODO add additional steps to playerTurn()
+            gameView.updateCenterFieldListOfProperties(currentPlayer);
             movePlayer(currentPlayer);
             currentPlayer.getPlayerField().fieldAction(currentPlayer,gameView);
+            isPlayerBankrupt(currentPlayer);
         }
     }
     public void turnLoop(){
-        while(board.getTotalPlayers() != 1){
+        while(board.getPlayers().size() != 1){
             playerTurn();
         }
+        gameView.gui.showMessage("Game is over! "+board.getPlayer(1).getName()+" won the game");
+        gameView.gui.close();
     }
     public void movePlayer(Player player){
-        gameView.showText("Throw dice");
+        gameView.showText(player.getName()+" throw your dice");
         player.getRaffleCup().rollDice();
         int currentRoll = player.getRaffleCup().getDiceSum();
         int die1 = player.getRaffleCup().getDie1Eyes();
         int die2 = player.getRaffleCup().getDie2Eyes();
-        int newPosition = (player.getPlayerField().getPosition()+currentRoll)%40;
-        player.setPlayerField(board.getFields()[newPosition-1]);
+        int newPosition = (player.getPlayerField().getPosition()+currentRoll-1)%40;
+        player.setPlayerField(board.getFields()[newPosition]);
         gameView.showDice(die1,die2);
-        gameView.setGUIPlayerField(player,(newPosition-1));
+        gameView.setGUIPlayerField(player,(newPosition));
+    }
+    public void isPlayerBankrupt(Player player){
+        if(player.getBalance()<0){
+            for(Ownable property:player.getProperties()){
+                property.setOwner(null);
+                gameView.updateFieldOwner(null,property.getPosition());
+                if(property instanceof Street streetProperty){
+                    streetProperty.setHouses(0);
+                }
+            }
+            gameView.getGuiPlayers().get(board.getPlayers().indexOf(player)).getCar().setPosition(null);
+            gameView.getGuiPlayers().get(board.getPlayers().indexOf(player)).setBalance(0);
+            board.removePlayer(player);
+
+
+        }
+    }
+    public void jailTurn(){
+
     }
 }

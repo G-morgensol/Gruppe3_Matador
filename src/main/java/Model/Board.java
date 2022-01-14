@@ -19,7 +19,6 @@ public class Board {
 
     //Field Factory based on GUI implementation. GUI_FieldFactory.java
     public static Field[] Fields(){
-        //TODO finish typing data for fields.
         Field[] fields = new Field[40];
         int i = 0;
         fields[i++] = new Start("Start",1);
@@ -74,7 +73,10 @@ public class Board {
             System.out.println("Could not add player");
         }
     }
-    public int getTotalPlayers(){return players.size();}
+    public void removePlayer(Player player){
+        players.remove(getPlayers().indexOf(player));
+    }
+    public List<Player> getPlayers(){return players;}
 
     public Player getPlayer(int playerNumber){
         return players.get(playerNumber-1);
