@@ -56,10 +56,13 @@ public class Street extends Ownable {
                 player.changeBalance(-getRent(numberOfHouses));
                 owner.changeBalance(getRent(numberOfHouses));
             }
+            //inside (owner!=null)
+            gameView.updatePlayerBalance(owner,owner.getBalance());
         }
         else {
             buyProperty(player,gameView);
         }
+        gameView.updatePlayerBalance(player,player.getBalance());
     }
 }
 

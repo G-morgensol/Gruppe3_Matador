@@ -74,7 +74,10 @@ public class Board {
             System.out.println("Could not add player");
         }
     }
-    public int getTotalPlayers(){return players.size();}
+    public void removePlayer(Player player){
+        players.remove(player.getPlayerNumber()-1);
+    }
+    public List getPlayers(){return players;}
 
     public Player getPlayer(int playerNumber){
         return players.get(playerNumber-1);

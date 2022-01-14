@@ -14,14 +14,14 @@ public class RaffleCup {
      * @return Sum of rolled dice.
      */
     public int rollDice(){
-    this.die1Eyes = die1.rollDie();
-    this.die2Eyes = die2.rollDie();
-    this.diceSum = die1Eyes+die2Eyes;
+    die1Eyes = die1.rollDie();
+    die2Eyes = die2.rollDie();
+    diceSum = die1Eyes+die2Eyes;
 
     if(die1Eyes==die2Eyes){
-        this.isPair = true;
+        isPair = true;
     } else {
-        this.isPair = false;
+        isPair = false;
     }
     return diceSum;
     }
