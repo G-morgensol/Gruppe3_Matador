@@ -18,7 +18,7 @@ public class Player {
     public RaffleCup getRaffleCup() {
         return rafflecup;
     }
-
+    private boolean jailCard;
 
 
 
@@ -27,6 +27,7 @@ public class Player {
         this.rafflecup = new RaffleCup();
         this.number = number;
         this.name = name;
+        this.jailCard = false;
     }
 
 
@@ -71,5 +72,8 @@ public class Player {
 
     }
     public String getName(){return name;}
-
+    public boolean getJailCard() {
+        return this.jailCard;
+    }
+    public void setJailCard(boolean card){jailCard=card;}
 }
