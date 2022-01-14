@@ -13,7 +13,7 @@ public class Shipping extends Ownable {
         int numberOfShipping = 1;
         Player owner = getOwner();
         if (owner != null &&!owner.isJailed() &&player!=owner) {
-            for (int i = 0; i <= owner.getProperties().size(); i++) {
+            for (int i = 0; i < owner.getProperties().size(); i++) {
                 if (owner.getProperties().get(i) instanceof Shipping){
                     numberOfShipping = numberOfShipping+1;
                 }

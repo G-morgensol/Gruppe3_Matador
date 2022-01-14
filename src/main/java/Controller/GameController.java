@@ -18,7 +18,6 @@ public class GameController {
 
     public void startGame(){
         int totalPlayers = gameView.addPlayers();
-        System.out.println("total players from gui:"+ totalPlayers);
         for (int i=1;i<=totalPlayers;i++){
             Player player = new Player("Player "+i,i);
             player.setPlayerField(board.getFields()[0]);
@@ -27,7 +26,6 @@ public class GameController {
         turnLoop();
     }
     public void playerTurn(){
-        System.out.println("total players from backend: "+board.getPlayers().size());
         for (int i =1;i<=board.getPlayers().size();i++){
             board.setCurrentPlayer(board.getPlayer(i));
             Player currentPlayer =board.getCurrentPlayer();
