@@ -34,6 +34,13 @@ public class GameController {
             //TODO add additional steps to playerTurn()
             if(currentPlayer.isJailed()){
                 jailTurn(currentPlayer);
+                //In case player gets out of jail on this turn
+                if(!currentPlayer.isJailed()){
+                    gameView.updateCenterFieldListOfProperties(currentPlayer);
+                    movePlayer(currentPlayer);
+                    currentPlayer.getPlayerField().fieldAction(currentPlayer,gameView);
+                    isPlayerBankrupt(currentPlayer);
+                }
             } else{
                 gameView.updateCenterFieldListOfProperties(currentPlayer);
                 movePlayer(currentPlayer);
