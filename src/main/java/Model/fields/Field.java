@@ -13,6 +13,8 @@ public abstract class Field {
         this.name = name;
         this.position = position;
     }
+
+
     public void fieldAction(Player player, GameView gameView){
 
     }

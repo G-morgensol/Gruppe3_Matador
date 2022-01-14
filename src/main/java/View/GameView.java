@@ -15,10 +15,6 @@ import java.util.List;
 public class GameView {
     public final GUI gui;
 
-    public List<GUI_Player> getGuiPlayers() {
-        return guiPlayers;
-    }
-
     private final List<GUI_Player> guiPlayers= new ArrayList<>();
 
     public GameView(GUI gui) {
@@ -29,6 +25,9 @@ public class GameView {
         return gui;
     }
 
+    public List<GUI_Player> getGuiPlayers() {
+        return guiPlayers;
+    }
     /**
      * This method takes User input for number of players, and their choice of type and color for their vehicle.
      * @return total players added are returned.

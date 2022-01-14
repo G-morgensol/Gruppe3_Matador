@@ -44,25 +44,22 @@ public class GameController {
         gameView.gui.close();
     }
     public void movePlayer(Player player){
-        gameView.showText("Throw dice");
+        gameView.showText(player.getName()+" throw your dice");
         player.getRaffleCup().rollDice();
         int currentRoll = player.getRaffleCup().getDiceSum();
         int die1 = player.getRaffleCup().getDie1Eyes();
         int die2 = player.getRaffleCup().getDie2Eyes();
-        int newPosition = (player.getPlayerField().getPosition()+currentRoll)%40;
-        if(newPosition==0){
-            newPosition=40;
-        }
-        player.setPlayerField(board.getFields()[newPosition-1]);
+        int newPosition = (player.getPlayerField().getPosition()+currentRoll-1)%40;
+        player.setPlayerField(board.getFields()[newPosition]);
         gameView.showDice(die1,die2);
-        gameView.setGUIPlayerField(player,(newPosition-1));
+        gameView.setGUIPlayerField(player,(newPosition));
     }
     public void isPlayerBankrupt(Player player){
         if(player.getBalance()<0){
+            gameView.getGuiPlayers().get(board.getPlayers().indexOf(player)).getCar().setPosition(null);
+            gameView.getGuiPlayers().get(board.getPlayers().indexOf(player)).setBalance(0);
             board.removePlayer(player);
-            gameView.getGuiPlayers().get(player.getPlayerNumber()-1).getCar().setPosition(null);
-            gameView.getGuiPlayers().get(player.getPlayerNumber()-1).setName("Out of game");
-            gameView.getGuiPlayers().get(player.getPlayerNumber()-1).setBalance(0);
+
         }
     }
 }
