@@ -32,10 +32,14 @@ public class GameController {
             board.setCurrentPlayer(board.getPlayer(i));
             Player currentPlayer =board.getCurrentPlayer();
             //TODO add additional steps to playerTurn()
-            gameView.updateCenterFieldListOfProperties(currentPlayer);
-            movePlayer(currentPlayer);
-            currentPlayer.getPlayerField().fieldAction(currentPlayer,gameView);
-            isPlayerBankrupt(currentPlayer);
+            if(currentPlayer.isJailed()){
+                jailTurn(currentPlayer);
+            } else{
+                gameView.updateCenterFieldListOfProperties(currentPlayer);
+                movePlayer(currentPlayer);
+                currentPlayer.getPlayerField().fieldAction(currentPlayer,gameView);
+                isPlayerBankrupt(currentPlayer);
+            }
         }
     }
     public void turnLoop(){
@@ -45,6 +49,7 @@ public class GameController {
         gameView.gui.showMessage("Game is over! "+board.getPlayer(1).getName()+" won the game");
         gameView.gui.close();
     }
+
     public void movePlayer(Player player){
         gameView.showText(player.getName()+" throw your dice");
         player.getRaffleCup().rollDice();
@@ -78,7 +83,27 @@ public class GameController {
 
         }
     }
-    public void jailTurn(){
-
+    public void jailTurn(Player player){
+        if(!player.getJailCard()){
+            String userSelection = gameView.getGui().getUserSelection("You are in jail, you have 2 options:","Pay 1000","Roll a pair");
+            switch(userSelection){
+                case "Pay 1000":
+                    player.setJailed(false);
+                    player.setBalance(-1000);
+                    gameView.updatePlayerBalance(player);
+                    break;
+                case "Roll a pair":
+                    player.getRaffleCup().rollDice();
+                    if(player.getRaffleCup().getIsPair()){
+                        player.setJailed(false);
+                    }
+                    break;
+            }
+        } else {
+            //player has a get out of jail card
+            gameView.showText("You use your get out of Jail card. How lucky for you!");
+            player.setJailCard(false);
+            player.setJailed(false);
+        }
     }
 }
