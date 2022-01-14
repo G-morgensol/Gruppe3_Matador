@@ -61,13 +61,13 @@ public class Street extends Ownable {
                 rentPaid = getRent(numberOfHouses);
             }
             //inside (owner!=null)
-            gameView.updatePlayerBalance(owner,owner.getBalance());
+            gameView.updatePlayerBalance(owner);
             gameView.gui.showMessage("You paid: "+rentPaid+" to "+owner.getName());
         }
         else {
             buyProperty(player,gameView);
         }
-        gameView.updatePlayerBalance(player,player.getBalance());
+        gameView.updatePlayerBalance(player);
     }
 
 }

@@ -51,9 +51,15 @@ public class GameController {
         int currentRoll = player.getRaffleCup().getDiceSum();
         int die1 = player.getRaffleCup().getDie1Eyes();
         int die2 = player.getRaffleCup().getDie2Eyes();
-        int newPosition = (player.getPlayerField().getPosition()+currentRoll-1)%40;
-        player.setPlayerField(board.getFields()[newPosition]);
+        int oldPosition = player.getPlayerField().getPosition();
+        int newPosition = (oldPosition+currentRoll-1)%40;
+        player.setPlayerField(Board.getFields()[newPosition]);
         gameView.showDice(die1,die2);
+        if(oldPosition>newPosition){
+            player.changeBalance(4000);
+            gameView.showText("You pass start, you get 4000 from the bank!");
+            gameView.updatePlayerBalance(player);
+        }
         gameView.setGUIPlayerField(player,(newPosition));
     }
     public void isPlayerBankrupt(Player player){

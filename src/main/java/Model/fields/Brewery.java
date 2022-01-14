@@ -20,11 +20,11 @@ public class Brewery extends Ownable {
             }
             player.changeBalance(-player.getRaffleCup().getDiceSum()*100*numberOfBrewery);
             owner.changeBalance(player.getRaffleCup().getDiceSum()*100*numberOfBrewery);
-            gameView.updatePlayerBalance(owner,owner.getBalance());
+            gameView.updatePlayerBalance(owner);
         } else {
             //Brewery has no owner
             buyProperty(player,gameView);
         }
-        gameView.updatePlayerBalance(player,player.getBalance());
+        gameView.updatePlayerBalance(player);
     }
 }

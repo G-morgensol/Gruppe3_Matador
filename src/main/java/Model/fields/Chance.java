@@ -117,7 +117,7 @@ public class Chance extends Field {
         gameView.setGUIPlayerField(player,(24)%40);
         gameView.gui.showMessage("Chance Card: you moved to Grønningen");
         player.getPlayerField().fieldAction(player,gameView);
-        gameView.updatePlayerBalance(player,player.getBalance());
+        gameView.updatePlayerBalance(player);
     }
 
     private void moveThreeBack(Player player, GameView gameView) {
@@ -125,7 +125,7 @@ public class Chance extends Field {
         //player.setPlayerField(newPosition);
         player.setPlayerField(getFields()[(newPosition-1)%40]);
         gameView.setGUIPlayerField(player,(newPosition-1)%40);
-        gameView.updatePlayerBalance(player,player.getBalance());
+        gameView.updatePlayerBalance(player);
         gameView.gui.showMessage("Chance Card: Move 3 spaces backward");
 
         player.getPlayerField().fieldAction(player,gameView);
@@ -135,7 +135,7 @@ public class Chance extends Field {
     private void moveToStart(Player player, GameView gameView) {
         player.setPlayerField(getFields()[(0)%40]);
         gameView.setGUIPlayerField(player,(0)%40);
-        gameView.updatePlayerBalance(player,player.getBalance());
+        gameView.updatePlayerBalance(player);
         gameView.gui.showMessage("Chance Card: you moved to Start ");
         player.getPlayerField().fieldAction(player,gameView);
 
@@ -143,75 +143,75 @@ public class Chance extends Field {
 
     private void salary(Player player, GameView gameView) {
         player.changeBalance(+1000);
-        gameView.updatePlayerBalance(player,player.getBalance());
+        gameView.updatePlayerBalance(player);
         gameView.gui.showMessage("Chance Card: You got a rise, you received 1000");
     }
 
     private void casino(Player player, GameView gameView) {
         player.changeBalance(+1000);
-        gameView.updatePlayerBalance(player,player.getBalance());
+        gameView.updatePlayerBalance(player);
         gameView.gui.showMessage("Chance Card: you got lucky at the casino and won 1000");
     }
 
     private void tax(Player player, GameView gameView) {
         player.changeBalance(+3000);
-        gameView.updatePlayerBalance(player,player.getBalance());
+        gameView.updatePlayerBalance(player);
         gameView.gui.showMessage("Chance Card:Tax returned 3000, something feels off");
     }
 
     private void bitcon(Player player, GameView gameView) {
         player.changeBalance(+1000);
-        gameView.updatePlayerBalance(player,player.getBalance());
+        gameView.updatePlayerBalance(player);
         gameView.gui.showMessage("Chance Card: you sold some of your bitcon, you got 1000");
     }
 
     private void euroJackport(Player player, GameView gameView) {
         player.changeBalance(+500);
-        gameView.updatePlayerBalance(player,player.getBalance());
+        gameView.updatePlayerBalance(player);
         gameView.gui.showMessage("Chance Card: you won EUROJACKPORT, just 8th place you won 500");
     }
 
     private void dentistBill(Player player, GameView gameView) {
         player.changeBalance(-2000);
-        gameView.updatePlayerBalance(player,player.getBalance());
+        gameView.updatePlayerBalance(player);
         gameView.gui.showMessage("Chance Card: you payed a vist to the dentist, you payed 2000");
     }
 
     private void parkingTicket(Player player, GameView gameView) {
         player.changeBalance(-200);
-        gameView.updatePlayerBalance(player,player.getBalance());
+        gameView.updatePlayerBalance(player);
         gameView.gui.showMessage("Chance Card: You forgot to buy a parking ticket and got fined 200");
     }
 
     private void carCrash(Player player, GameView gameView) {
         player.changeBalance(-3000);
-        gameView.updatePlayerBalance(player,player.getBalance());
+        gameView.updatePlayerBalance(player);
         gameView.gui.showMessage("Chance Card: Noob you crashed the car, you payed was 3000");
     }
 
     private void carTires(Player player, GameView gameView) {
         player.changeBalance(-1000);
-        gameView.updatePlayerBalance(player,player.getBalance());
+        gameView.updatePlayerBalance(player);
         gameView.gui.showMessage("Chance Card: You changed you'r tires, you cried while paying 1000");
     }
 
     private void beer(Player player, GameView gameView) {
         player.changeBalance(-200);
-        gameView.updatePlayerBalance(player,player.getBalance());
+        gameView.updatePlayerBalance(player);
         gameView.gui.showMessage("Chance Card: You bought beer, it was 200");
     }
 
     private void moveToFrederiksberg(Player player, GameView gameView) {
         player.setPlayerField(getFields()[(11)%40]);
         gameView.setGUIPlayerField(player,(11)%40);
-        gameView.updatePlayerBalance(player,player.getBalance());
+        gameView.updatePlayerBalance(player);
         gameView.gui.showMessage("Chance Card: you moved to Frederiksberg Allé ");
         player.getPlayerField().fieldAction(player,gameView);
     }
 
     private void jailFreeCard(Player player, GameView gameView) {
         player.setJailCard(true);
-        gameView.updatePlayerBalance(player,player.getBalance());
+        gameView.updatePlayerBalance(player);
         gameView.gui.showMessage("Chance Card: You have graced by the queen." + "\n" + "you got a jailfree card." );
     }
 
@@ -220,7 +220,7 @@ public class Chance extends Field {
         //player.setPlayerField(newPosition);
         player.setPlayerField(getFields()[(newPosition-1)%40]);
         gameView.setGUIPlayerField(player,(newPosition-1)%40);
-        gameView.updatePlayerBalance(player,player.getBalance());
+        gameView.updatePlayerBalance(player);
         gameView.gui.showMessage("Chance Card: Move 3 spaces forward");
 
         player.getPlayerField().fieldAction(player,gameView);
@@ -230,14 +230,14 @@ public class Chance extends Field {
 
     private void carWash(Player player, GameView gameView) {
         player.changeBalance(-300);
-        gameView.updatePlayerBalance(player,player.getBalance());
+        gameView.updatePlayerBalance(player);
         gameView.gui.showMessage("Chance Card: You got a expensive car wash - you payed 300");
 
     }
 
     private void fullStop(Player player, GameView gameView) {
         player.changeBalance(-1000);
-        gameView.updatePlayerBalance(player,player.getBalance());
+        gameView.updatePlayerBalance(player);
         gameView.gui.showMessage("Chance Card: Yo this is not USA, you drove past a Stop sign, " +
                 "pay 1000");
     }

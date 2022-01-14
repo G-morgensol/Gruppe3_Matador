@@ -110,9 +110,9 @@ public class GameView {
         }
 
     }
-    public void updatePlayerBalance(Player player, int newBalance){
+    public void updatePlayerBalance(Player player){
         GUI_Player guiPlayer = getGuiPlayers().get(player.getPlayerNumber()-1);
-        guiPlayer.setBalance(newBalance);
+        guiPlayer.setBalance(player.getBalance());
     }
 }
 

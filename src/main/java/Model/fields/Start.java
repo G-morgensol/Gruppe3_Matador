@@ -8,7 +8,7 @@ public class Start extends Field {
         super(name, position);
     }
     public void fieldAction(Player player){
-            player.changeBalance(4000); //when you pass start get 4000 kr
+        //Consider implementing house rule: You get double income from landing on start. I.E. 8000
         }
     }
 

@@ -28,7 +28,7 @@ public abstract class Ownable extends Field {
             player.getProperties().add((Ownable) player.getPlayerField());
             owner = player;
             gameView.updateFieldOwner(player,player.getPlayerField().position);
-            gameView.updatePlayerBalance(player,player.getBalance());
+            gameView.updatePlayerBalance(player);
         }
     }
 }

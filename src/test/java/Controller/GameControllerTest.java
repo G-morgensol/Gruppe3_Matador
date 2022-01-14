@@ -1,5 +1,5 @@
 package Controller;
-/*
+
 import Model.Board;
 import Model.Player;
 import View.GameView;
@@ -69,4 +69,3 @@ public class GameControllerTest {
     }
 }
 
- */
