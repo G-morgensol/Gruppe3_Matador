@@ -32,6 +32,7 @@ public class Street extends Ownable {
         int currentColorGroupSet = 0;
         //There is an owner of this street, and the owner is not the player visiting the field.
         if(owner!=null && player!=owner) {
+            int rentPaid = 0;
             //short form if statement https://stackoverflow.com/questions/8898590/short-form-for-java-if-statement
             colorGroupSetMax = colorGroup.equals("purple") || colorGroup.equals("blue") ? 2 : 3;
             if (numberOfHouses == 0) {
@@ -47,17 +48,21 @@ public class Street extends Ownable {
                     //Rent is doubled if full colorSet is owned.
                     player.changeBalance(-(getRent(0) * 2));
                     owner.changeBalance(getRent(0) * 2);
+                    rentPaid = getRent(0)*2;
                 } else {
                     player.changeBalance(-getRent(0));
                     owner.changeBalance(getRent(0));
+                    rentPaid = getRent(0);
                 }
             } else {
                 //numberOfHouses > 0
                 player.changeBalance(-getRent(numberOfHouses));
                 owner.changeBalance(getRent(numberOfHouses));
+                rentPaid = getRent(numberOfHouses);
             }
             //inside (owner!=null)
             gameView.updatePlayerBalance(owner,owner.getBalance());
+            gameView.gui.showMessage("You paid: "+rentPaid+" to "+owner.getName());
         }
         else {
             buyProperty(player,gameView);
