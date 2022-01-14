@@ -1,5 +1,6 @@
 package Model;
 
+import Controller.GameController;
 import Model.fields.*;
 
 import java.util.ArrayList;
@@ -9,16 +10,17 @@ public class Board {
 
 
     private final List<Player> players= new ArrayList<>();
-
+    private static Field[] fields = new Field[40];
 
 
     private Player current;
 
-    public Board(){;
+    public Board(){
+        fields = createFields();
     }
 
     //Field Factory based on GUI implementation. GUI_FieldFactory.java
-    public static Field[] Fields(){
+    public static Field[] createFields(){
         Field[] fields = new Field[40];
         int i = 0;
         fields[i++] = new Start("Start",1);
@@ -89,7 +91,10 @@ public class Board {
         this.current = current;
     }
     public static Field[] getFields(){
-        return Fields();
+        if(fields==null){
+            fields=createFields();
+        }
+        return fields;
     }
 }
 

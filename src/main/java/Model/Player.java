@@ -2,7 +2,6 @@ package Model;
 
 import Model.fields.Field;
 import Model.fields.Ownable;
-
 import java.util.ArrayList;
 import java.util.List;
 

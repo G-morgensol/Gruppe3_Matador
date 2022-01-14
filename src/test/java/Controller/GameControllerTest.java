@@ -3,11 +3,9 @@ package Controller;
 import Model.Board;
 import Model.Player;
 import View.GameView;
-import Model.*;
 import gui_fields.GUI_Car;
 import gui_fields.GUI_Player;
 import gui_main.GUI;
-import junit.framework.TestCase;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -29,7 +27,7 @@ public class GameControllerTest {
             GUI_Car car = new GUI_Car(Color.red,Color.red, GUI_Car.Type.CAR, GUI_Car.Pattern.FILL);
             GUI_Player guiPlayer = new GUI_Player("Player " +i,30000,car);
             board.addPlayer(player);
-            player.setPlayerField(board.getFields()[0]);
+            player.setPlayerField(Board.getFields()[0]);
             gui.addPlayer(guiPlayer);
             gameView.getGuiPlayers().add(guiPlayer);
         }
@@ -67,5 +65,7 @@ public class GameControllerTest {
 
         Assertions.assertEquals(tempPlayerPosition+secondRoll,playerPosition,"Dice roll was: "+ secondRoll+" Player " +currentPlayer.getPlayerNumber()+" landed ended at position: "+playerPosition);
     }
+
+
 }
 

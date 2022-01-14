@@ -1,10 +1,8 @@
 package Model.fields;
 
-import Controller.GameController;
+import Model.Board;
 import Model.Player;
 import View.GameView;
-
-import static Model.Board.getFields;
 
 public class Chance extends Field {
     public Chance(String name, int position) {
@@ -113,7 +111,7 @@ public class Chance extends Field {
     }
 
     private void moveToGrønningen(Player player, GameView gameView) {
-        player.setPlayerField(getFields()[(24)%40]);
+        player.setPlayerField(Board.getFields()[(24)%40]);
         gameView.setGUIPlayerField(player,(24)%40);
         gameView.gui.showMessage("Chance Card: you moved to Grønningen");
         player.getPlayerField().fieldAction(player,gameView);
@@ -123,7 +121,7 @@ public class Chance extends Field {
     private void moveThreeBack(Player player, GameView gameView) {
         int newPosition = (player.getPlayerField().getPosition()-3);
         //player.setPlayerField(newPosition);
-        player.setPlayerField(getFields()[(newPosition-1)%40]);
+        player.setPlayerField(Board.getFields()[(newPosition-1)%40]);
         gameView.setGUIPlayerField(player,(newPosition-1)%40);
         gameView.updatePlayerBalance(player);
         gameView.gui.showMessage("Chance Card: Move 3 spaces backward");
@@ -133,7 +131,7 @@ public class Chance extends Field {
     }
 
     private void moveToStart(Player player, GameView gameView) {
-        player.setPlayerField(getFields()[(0)%40]);
+        player.setPlayerField(Board.getFields()[(0)%40]);
         gameView.setGUIPlayerField(player,(0)%40);
         gameView.updatePlayerBalance(player);
         gameView.gui.showMessage("Chance Card: you moved to Start ");
@@ -202,7 +200,7 @@ public class Chance extends Field {
     }
 
     private void moveToFrederiksberg(Player player, GameView gameView) {
-        player.setPlayerField(getFields()[(11)%40]);
+        player.setPlayerField(Board.getFields()[(11)%40]);
         gameView.setGUIPlayerField(player,(11)%40);
         gameView.updatePlayerBalance(player);
         gameView.gui.showMessage("Chance Card: you moved to Frederiksberg Allé ");
@@ -218,7 +216,7 @@ public class Chance extends Field {
     private void moveThree(Player player, GameView gameView) {
         int newPosition = (player.getPlayerField().getPosition()+3);
         //player.setPlayerField(newPosition);
-        player.setPlayerField(getFields()[(newPosition-1)%40]);
+        player.setPlayerField(Board.getFields()[(newPosition-1)%40]);
         gameView.setGUIPlayerField(player,(newPosition-1)%40);
         gameView.updatePlayerBalance(player);
         gameView.gui.showMessage("Chance Card: Move 3 spaces forward");
