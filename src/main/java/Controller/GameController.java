@@ -2,6 +2,8 @@ package Controller;
 
 
 import Model.*;
+import Model.fields.Ownable;
+import Model.fields.Street;
 import View.GameView;
 
 public class GameController {
@@ -56,10 +58,21 @@ public class GameController {
     }
     public void isPlayerBankrupt(Player player){
         if(player.getBalance()<0){
+            for(Ownable property:player.getProperties()){
+                property.setOwner(null);
+                gameView.updateFieldOwner(null,property.getPosition());
+                if(property instanceof Street streetProperty){
+                    streetProperty.setHouses(0);
+                }
+            }
             gameView.getGuiPlayers().get(board.getPlayers().indexOf(player)).getCar().setPosition(null);
             gameView.getGuiPlayers().get(board.getPlayers().indexOf(player)).setBalance(0);
             board.removePlayer(player);
 
+
         }
+    }
+    public void jailTurn(){
+
     }
 }

@@ -64,5 +64,6 @@ public class Street extends Ownable {
         }
         gameView.updatePlayerBalance(player,player.getBalance());
     }
+
 }
 

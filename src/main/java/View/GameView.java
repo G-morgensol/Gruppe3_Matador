@@ -103,7 +103,12 @@ public class GameView {
     public void updateFieldOwner(Player player,int fieldPosition){
         GUI_Field field = gui.getFields()[fieldPosition-1];
         GUI_Ownable ownable = (GUI_Ownable) field;
-        ownable.setOwnerName(player.getName());
+        if(player!=null){
+            ownable.setOwnerName(player.getName());
+        } else{
+            ownable.setOwnerName(null);
+        }
+
     }
     public void updatePlayerBalance(Player player, int newBalance){
         GUI_Player guiPlayer = getGuiPlayers().get(player.getPlayerNumber()-1);
