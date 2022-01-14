@@ -32,7 +32,7 @@ public class Street extends Ownable {
         int currentColorGroupSet = 0;
         //There is an owner of this street, and the owner is not the player visiting the field.
         if(owner!=null && player!=owner) {
-            int rentPaid = 0;
+            int rentPaid;
             //short form if statement https://stackoverflow.com/questions/8898590/short-form-for-java-if-statement
             colorGroupSetMax = colorGroup.equals("purple") || colorGroup.equals("blue") ? 2 : 3;
             if (numberOfHouses == 0) {
