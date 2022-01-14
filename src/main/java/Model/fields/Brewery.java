@@ -12,7 +12,7 @@ public class Brewery extends Ownable {
     public void fieldAction(Player player,GameView gameView){
         int numberOfBrewery = 1;
         Player owner = getOwner();
-        if (owner != null && player!=owner){
+        if (owner != null && player!=owner &&!owner.isJailed()){
             for (int i = 0; i <= owner.getProperties().size(); i++){
                 if (owner.getProperties().get(i) instanceof Brewery){
                     numberOfBrewery = numberOfBrewery+1;
@@ -21,7 +21,7 @@ public class Brewery extends Ownable {
             player.changeBalance(-player.getRaffleCup().getDiceSum()*100*numberOfBrewery);
             owner.changeBalance(player.getRaffleCup().getDiceSum()*100*numberOfBrewery);
             gameView.updatePlayerBalance(owner);
-        } else {
+        } else if(owner==null) {
             //Brewery has no owner
             buyProperty(player,gameView);
         }

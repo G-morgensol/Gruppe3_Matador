@@ -12,7 +12,7 @@ public class Shipping extends Ownable {
     public void fieldAction(Player player, GameView gameView) {
         int numberOfShipping = 1;
         Player owner = getOwner();
-        if (owner != null) {
+        if (owner != null &&!owner.isJailed() &&player!=owner) {
             for (int i = 0; i <= owner.getProperties().size(); i++) {
                 if (owner.getProperties().get(i) instanceof Shipping){
                     numberOfShipping = numberOfShipping+1;
@@ -21,7 +21,7 @@ public class Shipping extends Ownable {
             player.changeBalance(-getRent(numberOfShipping));
             owner.changeBalance(getRent(numberOfShipping));
             gameView.updatePlayerBalance(owner);
-        } else {
+        } else if(owner==null) {
             buyProperty(player,gameView);
         }
         gameView.updatePlayerBalance(player);
