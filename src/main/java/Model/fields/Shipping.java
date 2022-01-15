@@ -10,7 +10,7 @@ public class Shipping extends Ownable {
 
 
     public void fieldAction(Player player, GameView gameView) {
-        int numberOfShipping = 1;
+        int numberOfShipping = 0;
         Player owner = getOwner();
         if (owner != null &&!owner.isJailed() &&player!=owner) {
             for (int i = 0; i < owner.getProperties().size(); i++) {

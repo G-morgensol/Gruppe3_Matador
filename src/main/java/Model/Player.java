@@ -38,11 +38,6 @@ public class Player {
         return playerField;
     }
 
-
-    public void setBalance(int balance) {
-        this.balance = balance;
-    }
-
     public void changeBalance(int changeBalance) {
         this.balance = balance + changeBalance;
     }
@@ -53,11 +48,6 @@ public class Player {
 
     public int getPlayerNumber() {
         return number;
-    }
-
-
-    public void addProperty(Ownable property) {
-        properties.add(property);
     }
 
     public List<Ownable> getProperties(){return properties;}

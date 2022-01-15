@@ -10,7 +10,7 @@ public class Brewery extends Ownable {
         super(name, position, price, rent);
     }
     public void fieldAction(Player player,GameView gameView){
-        int numberOfBrewery = 1;
+        int numberOfBrewery = 0;
         Player owner = getOwner();
         if (owner != null && player!=owner &&!owner.isJailed()){
             for (int i = 0; i < owner.getProperties().size(); i++){
