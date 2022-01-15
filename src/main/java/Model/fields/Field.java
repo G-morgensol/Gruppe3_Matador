@@ -5,7 +5,7 @@ import View.GameView;
 
 public abstract class Field {
     protected String name;
-    public int position;
+    protected int position;
 
 
 

@@ -45,7 +45,7 @@ public class GameControllerTest {
 
         int firstRoll = currentPlayer.getRaffleCup().getDiceSum();
         int playerPosition = currentPlayer.getPlayerField().getPosition();
-        int tempPlayerPosition =1;
+        int tempPlayerPosition =0;
 
         System.out.println("I rolled: "+firstRoll+" and I am now at position: "+currentPlayer.getPlayerField().getPosition());
         System.out.println("Die1: " + currentPlayer.getRaffleCup().getDie1Eyes());

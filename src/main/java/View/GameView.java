@@ -100,7 +100,7 @@ public class GameView {
     }
 
     public void updateFieldOwner(Player player,int fieldPosition){
-        GUI_Field field = gui.getFields()[fieldPosition-1];
+        GUI_Field field = gui.getFields()[fieldPosition];
         GUI_Ownable ownable = (GUI_Ownable) field;
         if(player!=null){
             ownable.setOwnerName(player.getName());

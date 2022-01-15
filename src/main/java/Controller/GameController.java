@@ -31,17 +31,15 @@ public class GameController {
             board.setCurrentPlayer(board.getPlayer(i));
             Player currentPlayer =board.getCurrentPlayer();
             int turn = 0;
-            //TODO add additional steps to playerTurn()
-            boolean issame;
-            do { issame = false;
-
+            do {
                 turn++;
-                if (turn == 4){
+                System.out.println("turn "+turn);
+                if (turn == 3){
                     currentPlayer.setJailed(true);
                  currentPlayer.setPlayerField(Board.getFields()[10]);
                     gameView.setGUIPlayerField(currentPlayer,10);
                     currentPlayer.setJailed(true);
-                    gameView.gui.showMessage("You got jailed, sucks to be you");
+                    gameView.gui.showMessage("You went way too fast! You get jailed");
                     break;
                 }
                 if(currentPlayer.isJailed()){
@@ -50,24 +48,16 @@ public class GameController {
                     if(!currentPlayer.isJailed()){
                         gameView.updateCenterFieldListOfProperties(currentPlayer);
                         movePlayer(currentPlayer);
-                        int die1Eyes = currentPlayer.getRaffleCup().getDie1Eyes();
-                        int die2Eyes = currentPlayer.getRaffleCup().getDie2Eyes();
-                        issame = (die1Eyes==die2Eyes);
                         currentPlayer.getPlayerField().fieldAction(currentPlayer,gameView);
                         isPlayerBankrupt(currentPlayer);
                     }
                 } else{
                     gameView.updateCenterFieldListOfProperties(currentPlayer);
                     movePlayer(currentPlayer);
-                    int die1Eyes = currentPlayer.getRaffleCup().getDie1Eyes();
-                    int die2Eyes = currentPlayer.getRaffleCup().getDie2Eyes();
-                    issame = (die1Eyes==die2Eyes);
                     currentPlayer.getPlayerField().fieldAction(currentPlayer,gameView);
                     isPlayerBankrupt(currentPlayer);
                 }
-
-            } while  (issame);
-
+            } while  (currentPlayer.getRaffleCup().getIsPair());
         }
     }
     public void turnLoop(){
@@ -85,7 +75,7 @@ public class GameController {
         int die1 = player.getRaffleCup().getDie1Eyes();
         int die2 = player.getRaffleCup().getDie2Eyes();
         int oldPosition = player.getPlayerField().getPosition();
-        int newPosition = (oldPosition+currentRoll-1)%40;
+        int newPosition = (oldPosition+currentRoll)%39;
         player.setPlayerField(Board.getFields()[newPosition]);
         gameView.showDice(die1,die2);
         if(oldPosition>newPosition){

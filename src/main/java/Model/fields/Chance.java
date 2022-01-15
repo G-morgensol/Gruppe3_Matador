@@ -110,8 +110,8 @@ public class Chance extends Field {
     }
 
     private void moveToGrønningen(Player player, GameView gameView) {
-        player.setPlayerField(Board.getFields()[(24)%40]);
-        gameView.setGUIPlayerField(player,(24)%40);
+        player.setPlayerField(Board.getFields()[(24)]);
+        gameView.setGUIPlayerField(player,(24));
         gameView.gui.showMessage("Chance Card: you moved to Grønningen");
         player.getPlayerField().fieldAction(player,gameView);
         gameView.updatePlayerBalance(player);
@@ -120,8 +120,8 @@ public class Chance extends Field {
     private void moveThreeBack(Player player, GameView gameView) {
         int newPosition = (player.getPlayerField().getPosition()-3);
         //player.setPlayerField(newPosition);
-        player.setPlayerField(Board.getFields()[(newPosition-1)%40]);
-        gameView.setGUIPlayerField(player,(newPosition-1)%40);
+        player.setPlayerField(Board.getFields()[(newPosition)%39]);
+        gameView.setGUIPlayerField(player,(newPosition)%39);
         gameView.updatePlayerBalance(player);
         gameView.gui.showMessage("Chance Card: Move 3 spaces backward");
 
@@ -130,8 +130,8 @@ public class Chance extends Field {
     }
 
     private void moveToStart(Player player, GameView gameView) {
-        player.setPlayerField(Board.getFields()[(0)%40]);
-        gameView.setGUIPlayerField(player,(0)%40);
+        player.setPlayerField(Board.getFields()[0]);
+        gameView.setGUIPlayerField(player,0);
         gameView.updatePlayerBalance(player);
         gameView.gui.showMessage("Chance Card: you moved to Start ");
         player.getPlayerField().fieldAction(player,gameView);
@@ -183,13 +183,13 @@ public class Chance extends Field {
     private void carCrash(Player player, GameView gameView) {
         player.changeBalance(-3000);
         gameView.updatePlayerBalance(player);
-        gameView.gui.showMessage("Chance Card: Noob you crashed the car, you payed was 3000");
+        gameView.gui.showMessage("Chance Card: You crashed your car, you paid 3000 in repairs");
     }
 
     private void carTires(Player player, GameView gameView) {
         player.changeBalance(-1000);
         gameView.updatePlayerBalance(player);
-        gameView.gui.showMessage("Chance Card: You changed you'r tires, you cried while paying 1000");
+        gameView.gui.showMessage("Chance Card: You changed your tires, you cried while paying 1000");
     }
 
     private void beer(Player player, GameView gameView) {
@@ -199,8 +199,8 @@ public class Chance extends Field {
     }
 
     private void moveToFrederiksberg(Player player, GameView gameView) {
-        player.setPlayerField(Board.getFields()[(11)%40]);
-        gameView.setGUIPlayerField(player,(11)%40);
+        player.setPlayerField(Board.getFields()[(11)]);
+        gameView.setGUIPlayerField(player,(11));
         gameView.updatePlayerBalance(player);
         gameView.gui.showMessage("Chance Card: you moved to Frederiksberg Allé ");
         player.getPlayerField().fieldAction(player,gameView);
@@ -215,8 +215,8 @@ public class Chance extends Field {
     private void moveThree(Player player, GameView gameView) {
         int newPosition = (player.getPlayerField().getPosition()+3);
         //player.setPlayerField(newPosition);
-        player.setPlayerField(Board.getFields()[(newPosition-1)%40]);
-        gameView.setGUIPlayerField(player,(newPosition-1)%40);
+        player.setPlayerField(Board.getFields()[(newPosition)%39]);
+        gameView.setGUIPlayerField(player,(newPosition)%39);
         gameView.updatePlayerBalance(player);
         gameView.gui.showMessage("Chance Card: Move 3 spaces forward");
 
