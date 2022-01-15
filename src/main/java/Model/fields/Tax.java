@@ -18,7 +18,7 @@ public class Tax extends Field {
                 for (Ownable property:player.getProperties()){
                     propertyValue = propertyValue +property.price;
                 }
-                player.changeBalance(propertyValue);
+                player.changeBalance(-propertyValue);
             }
         } else if (player.getPlayerField().position==39){
             gameView.showText("Pay 2000 in taxes!");
