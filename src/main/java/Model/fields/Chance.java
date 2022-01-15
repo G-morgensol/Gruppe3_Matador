@@ -10,7 +10,6 @@ public class Chance extends Field {
     }
     int ran;
     public void fieldAction(Player player, GameView gameView){
-        //TODO write method here
         ran = (int) (Math.random() * 18);
         switch(ran) {
             case 0:
@@ -210,7 +209,7 @@ public class Chance extends Field {
     private void jailFreeCard(Player player, GameView gameView) {
         player.setJailCard(true);
         gameView.updatePlayerBalance(player);
-        gameView.gui.showMessage("Chance Card: You have graced by the queen." + "\n" + "you got a jailfree card." );
+        gameView.gui.showMessage("Chance Card: You have been graced by the queen." + "\n" + "you got a jailfree card." );
     }
 
     private void moveThree(Player player, GameView gameView) {

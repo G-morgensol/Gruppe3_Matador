@@ -1,5 +1,8 @@
 package Model;
 
+import Model.fields.Field;
+import View.GameView;
+
 public class RaffleCup {
     private int die1Eyes;
     private int die2Eyes;
@@ -13,17 +16,19 @@ public class RaffleCup {
      * Rolls dice and updates die1 and die2.
      * @return Sum of rolled dice.
      */
-    public int rollDice(){
-    die1Eyes = die1.rollDie();
-    die2Eyes = die2.rollDie();
-    diceSum = die1Eyes+die2Eyes;
+    public int rollDice() {
+        die1Eyes = die1.rollDie();
+        die2Eyes = die2.rollDie();
+        diceSum = die1Eyes + die2Eyes;
 
-    if(die1Eyes==die2Eyes){
-        isPair = true;
-    } else {
-        isPair = false;
-    }
-    return diceSum;
+
+        if (die1Eyes == die2Eyes) {
+            isPair = true;
+            } else{
+            isPair = false;
+            }
+            return diceSum;
+
     }
 
     public void setDiceSum(int diceSum){this.diceSum = diceSum;}
