@@ -5,7 +5,7 @@ import View.GameView;
 
 public class ToJail extends Field {
 
-    Field jail;
+    private Field jail;
     public ToJail(String name, int position,Field jail) {
         super(name, position);
         this.jail = jail;
