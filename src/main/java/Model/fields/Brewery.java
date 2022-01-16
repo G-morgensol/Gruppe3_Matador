@@ -13,8 +13,8 @@ public class Brewery extends Ownable {
         int numberOfBrewery = 0;
         Player owner = getOwner();
         if (owner != null && player!=owner &&!owner.isJailed()){
-            for (int i = 0; i < owner.getProperties().size(); i++){
-                if (owner.getProperties().get(i) instanceof Brewery){
+            for (Ownable property:owner.getProperties()){
+                if (property instanceof Brewery){
                     numberOfBrewery = numberOfBrewery+1;
                 }
             }
@@ -28,3 +28,4 @@ public class Brewery extends Ownable {
         gameView.updatePlayerBalance(player);
     }
 }
+
