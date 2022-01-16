@@ -39,7 +39,6 @@ public class GameController {
                     currentPlayer.setJailed(true);
                     currentPlayer.setPlayerField(Board.getFields()[10]);
                     gameView.setGUIPlayerField(currentPlayer,10);
-                    currentPlayer.setJailed(true);
                     gameView.gui.showMessage("You went way too fast! You get jailed");
                     break; //Player stops his turn as he got 3 pairs in a row.
                 }
