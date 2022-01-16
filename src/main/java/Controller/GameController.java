@@ -33,30 +33,28 @@ public class GameController {
             int turn = 0;
             do {
                 turn++;
+                gameView.updateCenterFieldListOfProperties(currentPlayer);
                 System.out.println("turn "+turn);
                 if (turn == 3){
                     currentPlayer.setJailed(true);
-                 currentPlayer.setPlayerField(Board.getFields()[10]);
+                    currentPlayer.setPlayerField(Board.getFields()[10]);
                     gameView.setGUIPlayerField(currentPlayer,10);
                     currentPlayer.setJailed(true);
                     gameView.gui.showMessage("You went way too fast! You get jailed");
-                    break;
+                    break; //Player stops his turn as he got 3 pairs in a row.
                 }
                 if(currentPlayer.isJailed()){
                     jailTurn(currentPlayer);
                     //In case player gets out of jail on this turn
                     if(!currentPlayer.isJailed()){
-                        gameView.updateCenterFieldListOfProperties(currentPlayer);
                         movePlayer(currentPlayer);
                         currentPlayer.getPlayerField().fieldAction(currentPlayer,gameView);
-                        isPlayerBankrupt(currentPlayer);
                     }
                 } else{
-                    gameView.updateCenterFieldListOfProperties(currentPlayer);
                     movePlayer(currentPlayer);
                     currentPlayer.getPlayerField().fieldAction(currentPlayer,gameView);
-                    isPlayerBankrupt(currentPlayer);
                 }
+                isPlayerBankrupt(currentPlayer);
             } while  (currentPlayer.getRaffleCup().getIsPair());
         }
     }
@@ -97,8 +95,6 @@ public class GameController {
             gameView.getGuiPlayers().get(board.getPlayers().indexOf(player)).getCar().setPosition(null);
             gameView.getGuiPlayers().get(board.getPlayers().indexOf(player)).setBalance(0);
             board.removePlayer(player);
-
-
         }
     }
     public void jailTurn(Player player){
