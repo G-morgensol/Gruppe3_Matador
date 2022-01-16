@@ -90,6 +90,7 @@ public class Board {
     public void setCurrentPlayer(Player current) {
         this.current = current;
     }
+
     public static Field[] getFields(){
         if(fields==null){
             fields=createFields();

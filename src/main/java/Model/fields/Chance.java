@@ -119,6 +119,9 @@ public class Chance extends Field {
 
     private void moveThreeBack(Player player, GameView gameView) {
         int newPosition = (player.getPlayerField().getPosition()-3);
+        if(newPosition>0){
+            newPosition=newPosition+39;
+        }
         //player.setPlayerField(newPosition);
         player.setPlayerField(Board.getFields()[(newPosition)%39]);
         gameView.setGUIPlayerField(player,(newPosition)%39);
